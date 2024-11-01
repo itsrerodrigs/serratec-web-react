@@ -1,0 +1,67 @@
+header {
+  font-family: Arvo, sans-serif;
+  background-color: #1f1e1e;
+  display: flex;
+  height: 11vh;
+}
+
+.logo {
+  width: 140px;
+  height: 80px;
+  margin-right: 90px;
+  cursor: pointer;
+}
+
+.containerHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.containerHeader ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.containerHeader li {
+  list-style: none;
+}
+
+.containerHeader .link {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.containerHeader .link:hover {
+  color: #dfa32e;
+  border-bottom: 2px solid #dfa32e;
+  transition: color 0.3s ease-in-out, border-bottom 0.1s ease-in-out;
+}
+
+.containerHeader .activeLink {
+  color: #dfa32e;
+}
+
+.containerNav {
+  gap: 30px;
+}
+
+.icon {
+  color: white;
+  margin-right: 10px;
+  font-size: 17px;
+  transition: color 0.3s ease-in-out;
+  margin-right: 20px;
+}
+
+.icon:hover {
+  color: #dfa32e;
+  cursor: pointer;
+}
