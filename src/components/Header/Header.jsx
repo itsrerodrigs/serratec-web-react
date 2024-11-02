@@ -3,39 +3,49 @@ import img from "../../assets/Logo1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
+  const navigate = useNavigate();
+  const handleNavigation = (path) => navigate(path);
+  const handleHomeNavigation = () => handleNavigation('/');
+  const handleLandingNavigation = () => handleNavigation('/a-melhor-loja-de-bebidas-do-mundo');
+  const handleEspacoNavigation = () => handleNavigation('/espaco');
+  const handleSobreNavigation = () => handleNavigation('/sobre');
+  const handleEventosNavigation = () => handleNavigation('/eventos');
+  const handleContatoNavigation = () => handleNavigation('/contato');
+
   return (
     <>
       <header>
         <div className={style.containerHeader}>
-          <img src={img} alt="Logo do SerratecPub" className={style.logo} />
+          <img src={img} onClick={handleLandingNavigation} alt="Logo do SerratecPub" className={style.logo} />
           <nav>
             <ul className={style.containerNav}>
               <li>
-                <a href="#" className={`${style.link} ${style.activeLink}`}>
+                <button onClick={handleHomeNavigation} className={style.link}>
                   HOME
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className={style.link}>
+              <button onClick={handleEspacoNavigation} className={style.link}>
                   ESPAÇO
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className={style.link}>
+                <button onClick={handleSobreNavigation} className={style.link}>
                   SOBRE
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className={style.link}>
+                <button onClick={handleEventosNavigation} className={style.link}>
                   EVENTOS
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className={style.link}>
+                <button onClick={handleContatoNavigation} className={style.link}>
                   CONTATO
-                </a>
+                </button>
               </li>
             </ul>
           </nav>
