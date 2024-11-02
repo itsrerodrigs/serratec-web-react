@@ -103,6 +103,7 @@ export function CadastroPage() {
                     />
                     <button type="submit">Adicionar cliente</button>
                 </div>
+                <select></select>
             </form>
 
         </>

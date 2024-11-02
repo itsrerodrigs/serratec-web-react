@@ -5,30 +5,46 @@ import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { Carrinho } from "../../components/Card/CardCarrinho";
 import { InputNumb } from "../../components/Input/Input";
+import { Botao } from "../../components/Botao/Botao";
 
 export function ProdutoPage() {
     const [produtoList, setProdutoList] = useState([]);
     const [carrinho, setCarrinho] = useState([]);
-    const [qntd, setQntd] = useState({});
-    const [contator,setContator]=useState(0);
+    const [qntd, setQntd] = useState(0);
+    const [contator, setContator] = useState(0);
     const handleAddCarin = (produto) => {
-        const valorBruto = (produto.valorUnitario * 2) * qntd;
+
+        const quantidade = qntd[produto.id] || 0;
+        const valorBruto = (produto.valorUnitario * 2) * quantidade;
         const addCarrinho = {
+            id: produto.id,
             nome: produto.nome,
             categoria: produto.categoria,
             descricao: produto.descricao,
-            qntd: qntd,
+            qntd: quantidade,
             valorBruto: valorBruto
         };
+        console.log()
         setCarrinho([...carrinho, addCarrinho]);
-        setContator(contator+1);
+        setContator(contator + 1);
+    }
+    const handleVerificarCar = (produto) => {
+        const produtoExistente = carrinho.find(item => item.id === produto.id);
+        ; if (produtoExistente) {
+            const novoCarrinho = carrinho.map(item =>
+                item.id === produto.id ? { ...item, qntd: parseInt(qntd[produto.id] || 0, 10) } : item);
+            setCarrinho(novoCarrinho);
+        } else {
+            handleAddCarin(produto);
+        }
     }
     const handleRemover = (index) => {
         setCarrinho(carrinho.filter(produto => produto.id !== index));
+        setContator(contator - 1);
     };
-    const handleQuantidadeChange = (produtoId, value) => { 
-        setQntd({ ...qntd, [produtoId]: value });
-     };
+    const handleQuantidadeChange = (produtoId, value) => {
+        setQntd({ [produtoId]: value });
+    };
     const navegar = useNavigate();
     const handleOcultar = () => {
         let iconCar = document.getElementById("icon");
@@ -54,7 +70,11 @@ export function ProdutoPage() {
     };
     return (
         <>
-            <button onClick={() => navegar("/")}>◀</button>
+            <Botao
+                handleClick={() => navegar("/")}
+                texto={'◀'}
+            />
+            <h2 onClick={()=>navegar('/cadastro/produto')}>CADASTRA PRODUTO</h2>
             <h1>Produtos</h1>
             <div className={style.corpo}>
                 <div className={style.boxproduto}>
@@ -68,18 +88,24 @@ export function ProdutoPage() {
                                 qntdEstoque={pro.qntdEstoque}
                                 valorUnitario={pro.valorUnitario}
                             />
-                            <InputNumb
-                                texto={"Quantidade: "}
-                                value={qntd[pro.id] ||''}
-                                onChange={(e) => handleQuantidadeChange(pro.id, e.target.value)}
-                            />
-                            <button onClick={() => handleAddCarin(pro)}>➕</button>
+                            <div className={style.input}>
+                                <InputNumb
+                                    texto={"Quantidade: "}
+                                    value={qntd[pro.id] || ''}
+                                    onChange={(e) => handleQuantidadeChange(pro.id, e.target.value)}
+                                />
+                                <Botao
+                                    handleClick={() => handleVerificarCar(pro)}
+                                    texto={'➕'}
+                                />
+                            </div>
+                            {/* <button onClick={() => }>➕</button> */}
                         </div>
                     )}
                 </div>
                 <div id="icon" className={style.conteinerCarrinho}>
                     {carrinho.map((car) =>
-                        <div  className={style.carrinho}>
+                        <div className={style.carrinho}>
                             <Carrinho
                                 nome={car.nome}
                                 categoria={car.categoria}
@@ -91,7 +117,7 @@ export function ProdutoPage() {
                         </div>
                     )}
                 </div>
-                    <p className={style.iconCar} onClick={handleOcultar}>🛒{contator}</p>
+                <p className={style.iconCar} onClick={handleOcultar}>🛒{contator}</p>
             </div>
 
         </>
