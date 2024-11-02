@@ -5,7 +5,9 @@ export function Botao({handleClick,texto}){
 
     return(
         <>
-            <button className={style.bnt} onClick={handleClick}>{texto}</button>
+            <button className={style.bnt} onClick={handleClick}>
+                {texto}
+            </button>
         </>
     )
 }

@@ -131,7 +131,6 @@ export function CadastroPage() {
                     </div>
                     <button className={styles.buttonCadastrar} type="submit">cadastrar-se</button>
                 </div>
-                <select></select>
             </form>
 
         </>

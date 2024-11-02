@@ -131,3 +131,20 @@ export function InputDate({ texto, value, mask, onChange }) {
         </>
     );
 }
+export function SelectCategoria({ texto, value, handleChange }) {
+    return (
+        <><div className={styles.conteinerInput}>
+            <label className={styles.label}>{texto}</label>
+            <select className={styles.input} value={value} onChange={handleChange}>
+                <option value="...">...</option>
+                <option value="CERVEJA">CERVEJA</option>
+                <option value="DESTILADOS">DESTILADOS</option>
+                <option value="VINHOS">VINHOS</option>
+                <option value="NAO_ALCOOLICOS">NAO ALCOOLICOS</option>
+                <option value="AGUAS_E_GELO">AGUAS E GELO</option>
+                <option value="DRINKS_PRONTOS">DRINKS PRONTOS</option>
+            </select>
+        </div>
+        </>
+    )
+}

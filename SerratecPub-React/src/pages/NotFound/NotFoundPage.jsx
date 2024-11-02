@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import { Botao } from "../../components/Botao/Botao"
 
 
 export function NotFoundPage(){
@@ -8,7 +9,7 @@ export function NotFoundPage(){
   return (
     <>
       <h1>404 Not Found</h1>
-      <button onClick={handleNavigation}>Voltar a pagina inicial</button>
+      <Botao handleClick={handleNavigation} texto="Voltar a pagina inicial"/>
     </>
   )
 }
