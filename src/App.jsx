@@ -1,11 +1,11 @@
-import { Header } from "./components/Header/Header";
 import "./App.css";
-import Login from "./components/Login/Login";
+import { Rotas } from "./routes/Routes";
+
 
 function App() {
-  return
-  <Header />;
-  <Login />
+  return(
+    <Rotas/>
+  );
 }
 
 export default App;
