@@ -1,0 +1,96 @@
+.cadastroWrapper{
+    text-transform: uppercase;
+    font-family: Arvo, serif;
+    font-weight: bold;
+    max-width: 70vh;
+    margin: calc(50vh - 45vh) auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: block;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+h2 {
+    text-align: center;
+}
+
+.divInput {
+    text-transform: uppercase;
+    font-family: Arvo, serif;
+    width: 100%;
+    margin-bottom: 5vh;
+    padding: 2vh;
+    box-sizing: border-box;
+}
+
+.divTermos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.divTermos input{
+    margin-right: 1vh;
+    padding: 0;
+    margin: 0;
+    transform: scale(1.2);
+    width: 10%;
+}
+.divTermos p{
+    font-size: 1.7vh;
+    display: inline;
+    font-family: Arvo, serif;
+}
+.divTermos .buttonTermos{
+    font-size: 1.7vh;
+    text-transform: uppercase;
+    font-family: Arvo, serif;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    border: none;
+    background: none;
+    border-radius: 5px;
+}
+.divTermos .buttonTermos:hover{
+    color: #dfa32e;
+    transition: color 0.3s ease-in-out;
+}
+
+.divTermos .buttonTermos::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #dfa32e;
+    transition: width 0.3s ease-in-out;
+  }
+  
+.divTermos .buttonTermos:hover {
+    color: #dfa32e;
+    padding-bottom: 2px solid #dfa32e;
+    transition: color 0.3s ease-in-out, text-bottom 0.1s ease-in-out;
+}
+  .divTermos .buttonTermos:hover::after {
+    width: 100%;
+  }
+
+.buttonCadastrar {
+    margin-top: 3vh;
+    text-transform: uppercase;
+    font-family: Arvo, serif;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    background-color: #dfa32e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.buttonCadastrar:hover {
+    background-color: #f0c14b;
+    transition: background-color 0.3s ease-in-out;;
+}

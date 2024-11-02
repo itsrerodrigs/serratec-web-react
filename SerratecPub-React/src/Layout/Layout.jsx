@@ -1,11 +1,11 @@
 import { Header } from "../components/Header/Header";
-import { ProdutoPage } from "../pages/produto/ProdutoPage";
+import { Footer } from "../components/Footer/Footer";
+
 export function Layout(){
     return(
         <>
             <Header/>
-            <ProdutoPage/>
-            <footer>Fazer footer</footer>
+            <Footer/>
         </>
     )
 }
