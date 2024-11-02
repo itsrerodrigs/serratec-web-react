@@ -1,7 +1,6 @@
-import React from "react";
 import { CardProduto } from "../../components/Card/CardProduto";
 
-export function Produto(){
+export function ProdutoPage(){
    
     return(
         <>

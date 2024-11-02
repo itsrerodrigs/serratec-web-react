@@ -3,7 +3,7 @@ import { Card } from "../../components/Card/CardCliente";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 
-export function ClienteTabela() {
+export function ClientePage() {
     const [clienteList, setClienteList] = useState([]);
     const navegar = useNavigate();
     const handleRemover = (index) => {

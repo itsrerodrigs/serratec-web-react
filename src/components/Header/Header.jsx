@@ -10,14 +10,15 @@ export function Header() {
   const handleNavigation = (path) => navigate(path);
   const handleHomeNavigation = () => handleNavigation('/');
   const handleLandingNavigation = () => handleNavigation('/a-melhor-loja-de-bebidas-do-mundo');
-  const handleEspacoNavigation = () => handleNavigation('/espaco');
   const handleSobreNavigation = () => handleNavigation('/sobre');
-  const handleEventosNavigation = () => handleNavigation('/eventos');
   const handleContatoNavigation = () => handleNavigation('/contato');
+  const handleProdutoNavigation = () => handleNavigation('/produto');
+  const handleClienteNavigation = () => handleNavigation('/cliente');
+  const handleCadastroNavigation = () => handleNavigation('/cadastro');
+  const handleLoginNavigation = () => handleNavigation('/login');
   
   return (
     <>
-      <header>
         <div className={style.containerHeader}>
           <img src={img} onClick={handleLandingNavigation} alt="Logo do SerratecPub" className={style.logo} />
           <nav>
@@ -28,49 +29,42 @@ export function Header() {
                 </button>
               </li>
               <li>
-              <button onClick={handleEspacoNavigation} className={style.link}>
-                  ESPAÇO
-                </button>
-              </li>
-              <li>
                 <button onClick={handleSobreNavigation} className={style.link}>
-              <li onClick={()=>navegar("/produto")}>
-                <a href="#" className={style.link}>
-                  PRODUTOS
-                </a>
-              </li>
-              <li onClick={()=>navegar("/cliente")}>
-                <a href="#" className={style.link}>
-                  CLIENTE
-                </a>
-              </li>
                   SOBRE
                 </button>
               </li>
               <li>
-                <button onClick={handleEventosNavigation} className={style.link}>
-                  EVENTOS
+                <button onClick={handleProdutoNavigation} className={style.link}>
+                  PRODUTOS
                 </button>
               </li>
-
+              <li>
+                <button onClick={handleClienteNavigation} className={style.link}>
+                  CLIENTE
+                </button>
+              </li>
               <li>
                 <button onClick={handleContatoNavigation} className={style.link}>
                   CONTATO
                 </button>
-              <li onClick={()=>navegar('/cadastro')}>
-                <a href="#"  className={style.link}>
+              </li>
+              <li>
+                <button onClick={handleLoginNavigation} className={style.link}>
+                  LOGIN
+                </button>
+              </li>
+              <li>
+                <button onClick={handleCadastroNavigation} className={style.link}>
                   CADASTRO
-                </a>
-
+                </button>
               </li>
             </ul>
           </nav>
-          <div className={style.containerIcons}>
-            <FontAwesomeIcon icon={faFacebook} className={style.icon} />
-            <FontAwesomeIcon icon={faInstagram} className={style.icon} />
+          <div className={style.icon}>
+            <FontAwesomeIcon onClick={() => window.location.href = 'https://www.facebook.com'} icon={faFacebook} className={style.icon} id="facebook" />
+            <FontAwesomeIcon onClick={() => window.location.href = 'https://www.instagram.com'} icon={faInstagram} className={style.icon} />
           </div>
         </div>
-      </header>
     </>
   );
 }

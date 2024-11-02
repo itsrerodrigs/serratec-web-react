@@ -3,7 +3,7 @@ import { InputSenha, InputText } from "../../components/Input/Input";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 
-export function Cadastro() {
+export function CadastroPage() {
     
     const [cadastroList, setCadastroList] = useState([])
     const [nome, setNome] = useState('')
