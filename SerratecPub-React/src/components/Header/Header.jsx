@@ -3,6 +3,7 @@ import img from "../../assets/Logo1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 export function Header() {
@@ -14,7 +15,6 @@ export function Header() {
   const handleContatoNavigation = () => handleNavigation('/contato');
   const handleProdutoNavigation = () => handleNavigation('/produto');
   const handleClienteNavigation = () => handleNavigation('/cliente');
-  const handleCadastroNavigation = () => handleNavigation('/cadastro');
   const handleLoginNavigation = () => handleNavigation('/login');
   
   return (
@@ -48,20 +48,13 @@ export function Header() {
                   CONTATO
                 </button>
               </li>
-              <li>
-                <button onClick={handleLoginNavigation} className={style.link}>
-                  LOGIN
-                </button>
-              </li>
-              <li>
-                <button onClick={handleCadastroNavigation} className={style.link}>
-                  CADASTRO
-                </button>
-              </li>
+              <button onClick={handleLoginNavigation} className={style.link}>
+              </button>
             </ul>
           </nav>
+            <FontAwesomeIcon onClick={handleLoginNavigation} icon={faUser} className={style.user}/>
           <div className={style.icon}>
-            <FontAwesomeIcon onClick={() => window.location.href = 'https://www.facebook.com'} icon={faFacebook} className={style.icon} id="facebook" />
+            <FontAwesomeIcon onClick={() => window.location.href = 'https://www.facebook.com'} icon={faFacebook} className={style.icon} />
             <FontAwesomeIcon onClick={() => window.location.href = 'https://www.instagram.com'} icon={faInstagram} className={style.icon} />
           </div>
         </div>

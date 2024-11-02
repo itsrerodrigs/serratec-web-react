@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { InputSenha, InputText } from "../../components/Input/Input";
-import { useNavigate } from "react-router-dom";
+import { InputDate, InputNumb, InputSenha, InputText } from "../../components/Input/Input";
 import { api } from "../../services/api";
+import styles from "./CadastroPage.module.css";
+import { useNavigate } from "react-router-dom";
 
 export function CadastroPage() {
     
@@ -11,11 +12,14 @@ export function CadastroPage() {
     const [cpf, setCpf] = useState('')
     const [dataNascimento, setDataNascimento] = useState('')
     const [telefone, setTelefone] = useState('')
-    const [endereco, setEndereco] = useState([])
     const [cep, setCep] = useState('')
     const [numero, setNumero] = useState('')
     const [complemento, setComplemento] = useState('')
     const [senha, setSenha] = useState('')
+
+    const navigate = useNavigate();
+    const handleNavigation = () => navigate('/termos-de-uso');
+    
     const handleCadastrar = () => {
         const novoCadastro = {
             nome,
@@ -26,8 +30,7 @@ export function CadastroPage() {
             endereco:{ cep, numero, complemento },  
         };
         postCliente(novoCadastro);
-    }
-    const navegar = useNavigate();
+    };
     const postCliente = async (cliente) => {
         const auth = btoa("Gustavo:teste"); 
     
@@ -47,61 +50,86 @@ export function CadastroPage() {
     };
     return (
         <>
-            <button onClick={() => navegar("/")}>◀</button>
-            <form onSubmit={handleCadastrar}>
-                <h3>Cadastro de Cliente</h3>
-                <div>
-                    <InputText
-                        texto={"Nome: "}
+            <form className={styles.cadastroWrapper} onSubmit={handleCadastrar}>
+                <h2>cadastro</h2>
+                <div className={styles.divInput}>
+                <InputText
+                        className={styles.input}
+                        texto="Nome:"
+                        placeholder="Digite seu nome"
                         value={nome}
-                        onChange={(e) => setNome(e.target.value)}
+                        onChange={setNome}
                     />
-                    <InputText
-                        texto={"CPF: "}
+                    <InputNumb
+                        className={styles.input}
+                        texto="CPF: "
+                        placeholder="Digite seu CPF"
+                        mask="cpf"
                         value={cpf}
-                        onChange={(e) => setCpf(e.target.value)}
+                        onChange={setCpf}
                     />
-                    <InputText
-                        texto={"Data Nascimento: "}
+                    <InputDate
+                        className={styles.input}
+                        texto="Data Nascimento: "
                         value={dataNascimento}
-                        onChange={(e) => setDataNascimento(e.target.value)}
+                        onChange={setDataNascimento}
                     />
-                    <InputText
-                        texto={"Email: "}
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <InputText
-                        texto={"Telefone: "}
-                        value={telefone}
-                        onChange={(e) => setTelefone(e.target.value)}
-                    />
-                    <InputText
-                        texto={"Cep: "}
+                    <InputNumb
+                        className={styles.input}
+                        texto="CEP: "
+                        placeholder="Digite seu CEP"
+                        mask="cep"
                         value={cep}
-                        onChange={(e) => setCep(e.target.value)}
+                        onChange={setCep}
                     />
-                    <InputText
-                        texto={"Numero: "}
+                    <InputNumb
+                        className={styles.input}
+                        texto="Número: "
+                        placeholder="Digite o número"
+                        mask="numero"
                         value={numero}
-                        onChange={(e) => setNumero(e.target.value)}
+                        onChange={setNumero}
                     />
                     <InputText
-                        texto={"Complemento: "}
+                        className={styles.input}
+                        texto="Complemento: "
+                        placeholder="Digite o complemento"
                         value={complemento}
-                        onChange={(e) => setComplemento(e.target.value)}
+                        onChange={setComplemento}
+                    />
+                    <InputText
+                        className={styles.input}
+                        texto="Email: "
+                        placeholder="Digite seu email"
+                        value={email}
+                        onChange={setEmail}
+                    />
+                    <InputNumb
+                        className={styles.input}
+                        texto="Telefone: "
+                        placeholder="+55(DDD)9 9999-9999"
+                        mask="telefone"
+                        value={telefone}
+                        onChange={setTelefone}
                     />
                     <InputSenha
-                        texto={"Senha:"}
+                        className={styles.input}
+                        texto="Senha: "
                         value={senha}
-                        onChange={(e) => setSenha(e.target.value)}
+                        onChange={setSenha}
                     />
                     <InputSenha
-                        texto={"Confirma senha:"}
+                        className={styles.input}
+                        texto="Confirme sua senha: "
                         value={senha}
-                        onChange={(e) => setSenha(e.target.value)}
+                        onChange={setSenha}
                     />
-                    <button type="submit">Adicionar cliente</button>
+                    <div className={styles.divTermos}>
+                        <input type="checkbox"/>
+                        <p>Li e aceito os</p>
+                        <button onClick={handleNavigation} className={styles.buttonTermos}>termos de uso</button>
+                    </div>
+                    <button className={styles.buttonCadastrar} type="submit">cadastrar-se</button>
                 </div>
             </form>
 
