@@ -5,9 +5,9 @@ import { HomePage } from '../pages/Home/HomePage';
 import { SobrePage } from '../pages/Sobre/SobrePage';
 import { ContatoPage } from '../pages/Contato/ContatoPage';
 import { LandingPage } from '../pages/Landing/LandingPage';
-import { ProdutoPage } from '../pages/Produto/ProdutoPage';
-import { ClientePage } from '../pages/Cliente/ClientePage';
-import { CadastroPage } from '../pages/Cadastro/CadastroPage';
+import { ProdutoPage } from '../pages/produto/ProdutoPage';
+import { ClientePage } from '../pages/cliente/ClientePage';
+import { CadastroPage } from '../pages/cadastro/CadastroPage';
 import { LoginPage } from '../pages/Login/LoginPage';
 
 export function Rotas() {
