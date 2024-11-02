@@ -1,10 +1,11 @@
+import styles from "./Card.module.css"
 
 export function Carrinho({ nome, categoria, descricao, qntd, valor }) {
    
     return (
         <>
-            <div >
-                <div >
+            <div className={styles.corpo}>
+            <div className={styles.corpo2}>
                     <h2>Nome: {nome}</h2>
                     <p>Categoria: {categoria} <br /></p>
                     <p>Descrição: {descricao} <br /></p>
