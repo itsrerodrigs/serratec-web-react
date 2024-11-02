@@ -14,7 +14,7 @@ export function Header() {
   const handleSobreNavigation = () => handleNavigation('/sobre');
   const handleEventosNavigation = () => handleNavigation('/eventos');
   const handleContatoNavigation = () => handleNavigation('/contato');
-
+  
   return (
     <>
       <header>
@@ -34,6 +34,16 @@ export function Header() {
               </li>
               <li>
                 <button onClick={handleSobreNavigation} className={style.link}>
+              <li onClick={()=>navegar("/produto")}>
+                <a href="#" className={style.link}>
+                  PRODUTOS
+                </a>
+              </li>
+              <li onClick={()=>navegar("/cliente")}>
+                <a href="#" className={style.link}>
+                  CLIENTE
+                </a>
+              </li>
                   SOBRE
                 </button>
               </li>
@@ -42,10 +52,16 @@ export function Header() {
                   EVENTOS
                 </button>
               </li>
+
               <li>
                 <button onClick={handleContatoNavigation} className={style.link}>
                   CONTATO
                 </button>
+              <li onClick={()=>navegar('/cadastro')}>
+                <a href="#"  className={style.link}>
+                  CADASTRO
+                </a>
+
               </li>
             </ul>
           </nav>
