@@ -3,6 +3,7 @@ import img from "../../assets/Logo1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+
 export function Header() {
   return (
     <>
