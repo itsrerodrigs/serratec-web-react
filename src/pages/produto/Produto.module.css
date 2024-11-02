@@ -1,0 +1,7 @@
+.boxproduto{
+    justify-content: center;
+    background-color: #1f1e1e;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap:10px;
+}
