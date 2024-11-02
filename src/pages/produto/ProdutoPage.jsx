@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CardProduto } from "../../components/Card/CardProduto";
 import style from './Produto.module.css';
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
-export function Produto() {
-    const [produtoList, setProdutoList] = useState([]);
 
+export function ProdutoPage() {
+    const [produtoList, setProdutoList] = useState([]);
     const handleRemover = (index) => {
         setProdutoList(produtoList.filter(produto => produto.id !== index));
     };
-
     const navegar = useNavigate();
 
     useEffect(() => {
@@ -43,7 +42,6 @@ export function Produto() {
 
                 )}
                 </div>
-                
         </>
     );
 }
