@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card } from "../../components/Card/CardCliente";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
-
+import style from"./Cliente.module.css";
 export function ClienteTabela() {
     const [clienteList, setClienteList] = useState([]);
     const navegar = useNavigate();
@@ -29,7 +29,7 @@ export function ClienteTabela() {
             <button onClick={() => navegar("/")}>◀</button>
             <h2>Lista de Clientes.</h2>
             <h3 onClick={() => navegar("/cadastro")}>Cadastrar de Cliente</h3>
-            <div>
+            <div className={style.boxcliente}>
                 {clienteList.map((cli) =>
                     <Card
                         key={cli}

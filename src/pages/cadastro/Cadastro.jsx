@@ -17,15 +17,13 @@ export function Cadastro() {
     const [complemento, setComplemento] = useState('')
     const [senha, setSenha] = useState('')
     const handleCadastrar = () => {
-
         const novoCadastro = {
             nome,
             cpf,
             dataNascimento,
             email,
             telefone,
-            endereco:{ cep, numero, complemento },
-            
+            endereco:{ cep, numero, complemento },  
         };
         postCliente(novoCadastro);
     }

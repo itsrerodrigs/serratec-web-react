@@ -5,9 +5,6 @@ export function Card({ index,nome,cpf,email,telefone,dataNascimento ,handleRemov
     return (
         <>
             <div className={styles.corpo}>
-                <div >
-                   
-                </div>
                 <div className={styles.corpo2}>
                     <h2 className={styles.titulo}>{nome}</h2>
                     <p className={styles.subtitulo}>{cpf}</p>
