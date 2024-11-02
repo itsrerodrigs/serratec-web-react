@@ -18,12 +18,12 @@ export function Rotas() {
                     <Route index element={<HomePage/>}/>
                     <Route path='a-melhor-loja-de-bebidas-do-mundo' element={<LandingPage/>}/>
                 </Route>
-                    <Route path='sobre' element={<SobrePage/>}/>
-                    <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='cliente' element={<ClientePage/>}/>
+                    <Route path='sobre' element={<SobrePage/>}/>
+                    <Route path='produto' element={<ProdutoPage/>}/>
+                    <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
                     <Route path='cadastro' element={<CadastroPage/>}/>
-                    <Route path='produto' element={<ProdutoPage/>}/>
                 <Route path='*' element={<NotFoundPage/>}/>
             </Routes>
         </>

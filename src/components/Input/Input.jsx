@@ -12,6 +12,18 @@ export function InputText({ texto,value, onChange }) {
         </>
     );
 };
+export function InputNumb({ texto,value, onChange }) {
+    return (
+        <>
+            
+                <div className={styles.conteinerInput}>
+                    <label className={styles.label}>{texto}</label>
+                    <input className={styles.input} type="number" placeholder="Digite aqui.." value={value} onChange={onChange} />
+                </div>
+         
+        </>
+    );
+};
 export function InputSenha({texto,value, onChange }) {
     return (
         <>

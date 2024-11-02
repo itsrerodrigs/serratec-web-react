@@ -5,9 +5,7 @@ export function CardProduto({ nome, categoria, descricao, qntdEstoque, valorUnit
    
     return (
         <>
-            
-
-            <div className={styles.corpo}>
+                <div className={styles.corpo}>
                 <div className={styles.corpo2}>
                     <h2>Nome: {nome}</h2>
                     <p>Categoria: {categoria} <br /></p>

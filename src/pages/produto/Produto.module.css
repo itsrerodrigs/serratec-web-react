@@ -1,7 +1,33 @@
-.boxproduto{
+.boxproduto {
     justify-content: center;
-    background-color: #1f1e1e;
     display: flex;
     flex-wrap: wrap-reverse;
-    gap:10px;
+    gap: 10px;
+}
+
+.corpo {
+    position: relative;
+    display: flex;
+    background-color: #1f1e1e;
+    flex-direction: column-reverse;
+
+}           
+.conteinerCarrinho{
+    background-color: antiquewhite;
+    width: 400px;
+    height: auto;
+
+}
+
+.carrinho {
+    display: flex;
+    border: white solid 3px;
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+    background-color: aqua;
+    flex-direction: column;
+    text-align: center;   
+    align-items: center;
+
 }
