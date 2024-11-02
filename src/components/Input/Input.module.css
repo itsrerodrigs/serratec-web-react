@@ -1,0 +1,24 @@
+.input {
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: aqua;
+}
+
+.label {
+    font-size: medium;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+}
+
+.conteinerInput {
+    margin: 10px;
+    display: inline-flex;
+    flex-direction: column;
+
+}

@@ -1,0 +1,15 @@
+.corpo{
+    display: flex;
+    width: 20%;
+    height: 400px;
+    background-color: blanchedalmond;
+    border: black solid 2px;
+    padding: 10px;
+}
+
+.corpo2{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 10px;
+}
