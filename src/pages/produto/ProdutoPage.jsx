@@ -6,8 +6,12 @@ import { useNavigate } from "react-router-dom";
 
 export function ProdutoPage() {
     const [produtoList, setProdutoList] = useState([]);
+    const [carrinho,setCarrinho]= useState([]);
+    const handleAddCarin=(produto)=>{
+        setCarrinho([...carrinho,produto])
+    }
     const handleRemover = (index) => {
-        setProdutoList(produtoList.filter(produto => produto.id !== index));
+        setCarrinho(carrinho.filter(produto => produto.id !== index));
     };
     const navegar = useNavigate();
 
@@ -31,7 +35,8 @@ export function ProdutoPage() {
             <h1>Produtos</h1>
             <div className={style.boxproduto}>
             {produtoList.map((pro) =>
-                    <CardProduto
+                   <div>
+                   <CardProduto
                         key={pro}
                         nome={pro.nome}
                         categoria={pro.categoria}
@@ -39,9 +44,16 @@ export function ProdutoPage() {
                         qntdEstoque={pro.qntdEstoque}
                         valorUnitario={pro.valorUnitario}
                     />
-
+                <button onClick={()=>handleAddCarin(pro)}>➕</button>
+                </div>
                 )}
                 </div>
+                    {carrinho.map((car)=>
+                <div>
+                    <p>{car.nome}-{car.descricao}-{car.valorUnitario}</p>
+                        <button onClick={()=>handleRemover(car.id)}>✖</button>
+                </div>
+                    )}
         </>
     );
 }

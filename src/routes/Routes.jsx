@@ -17,13 +17,13 @@ export function Rotas() {
                 <Route path='/' element={<Layout/>}>
                     <Route index element={<HomePage/>}/>
                     <Route path='a-melhor-loja-de-bebidas-do-mundo' element={<LandingPage/>}/>
+                </Route>
                     <Route path='sobre' element={<SobrePage/>}/>
                     <Route path='contato' element={<ContatoPage/>}/>
-                    <Route path='produto' element={<ProdutoPage/>}/>
                     <Route path='cliente' element={<ClientePage/>}/>
-                    <Route path='cadastro' element={<CadastroPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
-                </Route>
+                    <Route path='cadastro' element={<CadastroPage/>}/>
+                    <Route path='produto' element={<ProdutoPage/>}/>
                 <Route path='*' element={<NotFoundPage/>}/>
             </Routes>
         </>
