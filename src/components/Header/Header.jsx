@@ -3,8 +3,12 @@ import img from "../../assets/Logo1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { useNavigate } from "react-router-dom";
+
+
 
 export function Header() {
+  const navegar = useNavigate();
   return (
     <>
       <header>
@@ -17,12 +21,17 @@ export function Header() {
                   HOME
                 </a>
               </li>
-              <li>
+              <li onClick={()=>navegar("/produto")}>
                 <a href="#" className={style.link}>
-                  ESPAÇO
+                  PRODUTOS
                 </a>
               </li>
-              <li>
+              <li onClick={()=>navegar("/cliente")}>
+                <a href="#" className={style.link}>
+                  CLIENTE
+                </a>
+              </li>
+              <li >
                 <a href="#" className={style.link}>
                   SOBRE
                 </a>
@@ -32,9 +41,9 @@ export function Header() {
                   EVENTOS
                 </a>
               </li>
-              <li>
-                <a href="#" className={style.link}>
-                  CONTATO
+              <li onClick={()=>navegar('/cadastro')}>
+                <a href="#"  className={style.link}>
+                  CADASTRO
                 </a>
               </li>
             </ul>
