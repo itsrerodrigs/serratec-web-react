@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from '../Layout/Layout';
+import { Layout } from '../components/Layout/Layout';
 import { NotFoundPage } from '../pages/NotFound/NotFoundPage';
 import { HomePage } from '../pages/Home/HomePage';
 import { SobrePage } from '../pages/Sobre/SobrePage';
@@ -16,6 +16,7 @@ import { CadastraProduto } from '../pages/Cadastro/CadastraProduto';
 export function Rotas() {
     return (
         <>
+        
             <Routes>
                 <Route path='/' element={<Layout/>}>
                     <Route index element={<HomePage/>}/>
