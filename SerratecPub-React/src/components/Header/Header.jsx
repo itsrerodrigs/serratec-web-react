@@ -1,5 +1,5 @@
 import style from "../Header/Header.module.css";
-import img from "../../assets/Logo1.png";
+import img from "../../assets/images/Logo1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
