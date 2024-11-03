@@ -5,7 +5,7 @@ export function Layout(){
     return(
         <>
             <Header/>
-            <Footer/>
+            <Footer />
         </>
     )
 }

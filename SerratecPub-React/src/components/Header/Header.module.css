@@ -59,8 +59,9 @@
   gap: 3vh;
 }
 
-.user{
+.user {
   cursor: pointer;
+  color: white;
   font-size: 3vh;
   margin: 0vh 5vh 0vh -5vh;
   display: flex;
