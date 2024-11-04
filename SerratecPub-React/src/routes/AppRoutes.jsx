@@ -5,13 +5,12 @@ import { HomePage } from '../pages/Home/HomePage';
 import { SobrePage } from '../pages/Sobre/SobrePage';
 import { ContatoPage } from '../pages/Contato/ContatoPage';
 import { LandingPage } from '../pages/Landing/LandingPage';
-import { ProdutoPage } from '../pages/Produto/ProdutoPage';
+import { Produto } from '../pages/Produto/Produto';
 import { ClientePage } from '../pages/Cliente/ClientePage';
 import { CadastroPage } from '../pages/Cadastro/CadastroPage';
 import { LoginPage } from '../pages/Login/LoginPage';
 import { TermosDeUsoPage } from '../pages/TermosDeUso/TermosDeUsoPage';
 import { CadastraProduto } from '../pages/Cadastro/CadastraProduto';
-
 
 export function Rotas() {
     return (
@@ -24,7 +23,7 @@ export function Rotas() {
                 </Route>
                     <Route path='cliente' element={<ClientePage/>}/>
                     <Route path='sobre' element={<SobrePage/>}/>
-                    <Route path='produto' element={<ProdutoPage/>}/>
+                    <Route path='produto' element={<Produto/>}/>
                     <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
                     <Route path='cadastro' element={<CadastroPage/>}/>
