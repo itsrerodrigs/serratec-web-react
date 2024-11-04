@@ -2,19 +2,19 @@ import { useState } from "react"
 import { api } from "../../services/api";
 
 
-export function FinalizarPedido({ carrinho }) {
-    const [pedido, setPedido] = useState(null)
-    const [item, setItem] = useState([])
+export function FinalizarPedido({ carrinho,limparCarrinho }) {
+    
 
     const postPedido = async () => {
         const pedido1 = {
+            statusPedido:"EM_PRODUCAO",
             nomeCliente: "Gustavo Santos",
-            produtos: carrinho.map(item => ({
+            itemPedido: carrinho.map(item => ({
                 quantidade: item.qntd,
-                valorBruto: item.valorBruto,
+                percentualDesconto: 5,
                 idProduto: item.id,
             })),
-            valorTotal: carrinho.reduce((acc, item) => acc + item.valorBruto, 0),
+            
         };
 
         try {
@@ -23,21 +23,22 @@ export function FinalizarPedido({ carrinho }) {
                 withCredentials: true
             });
             console.log('Pedido finalizado com sucesso:', response.data);
-            setPedido("Pedido finalizado com sucesso!");
+            limparCarrinho();   
+           
 
          
            
 
         } catch (error) {
             console.error("Erro ao finalizar o pedido:", error.response ? error.response.data : error.message);
-            setPedidoStatus("Erro ao finalizar o pedido. Tente novamente.");
+            
         }
 
     }
     return (
         <>
             <button onClick={postPedido}>Finalizar Pedido</button>
-            {pedido && <p>{pedido}</p>}
+           
 
         </>
     )

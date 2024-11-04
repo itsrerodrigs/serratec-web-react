@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { CardProduto } from "../../components/Card/CardProduto";
 import style from './Produto.module.css';
 import { api } from "../../services/api";
-import { useNavigate } from "react-router-dom";
 import { Carrinho } from "../../components/Card/CardCarrinho";
-import { InputNumb } from "../../components/Input/Input";
+import { InputNumero } from "../../components/Input/Input";
 import { Botao } from "../../components/Botao/Botao";
 import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
 
@@ -12,7 +11,7 @@ import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
 export function ProdutoPage() {
     const [produtoList, setProdutoList] = useState([
         {
-            id:30,
+            id: 30,
             nome: 'cerveja',
             categoria: 'Bebida',
             descricao: 'produto.descricao',
@@ -20,7 +19,7 @@ export function ProdutoPage() {
             valorBruto: 3.5
         },
         {
-            id:40,
+            id: 40,
             nome: 'cerveja',
             categoria: 'Bebida',
             descricao: 'descricao',
@@ -28,7 +27,7 @@ export function ProdutoPage() {
             valorBruto: 3.5
         },
         {
-            id:60,
+            id: 60,
             nome: 'cerveja',
             categoria: 'Bebida',
             descricao: 'descricao',
@@ -39,8 +38,8 @@ export function ProdutoPage() {
     const [carrinho, setCarrinho] = useState([]);
     const [qntd, setQntd] = useState(0);
     const [contator, setContator] = useState(0);
-    const handleAddCarin = (produto) => {
 
+    const handleAddCarin = (produto) => {
         const quantidade = qntd[produto.id] || 0;
         const valorBruto = (produto.valorUnitario * 2) * quantidade;
         const addCarrinho = {
@@ -50,6 +49,7 @@ export function ProdutoPage() {
             descricao: produto.descricao,
             qntd: quantidade,
             valorBruto: valorBruto
+
         };
         console.log()
         setCarrinho([...carrinho, addCarrinho]);
@@ -72,7 +72,6 @@ export function ProdutoPage() {
     const handleQuantidadeChange = (produtoId, value) => {
         setQntd({ [produtoId]: value });
     };
-    const navegar = useNavigate();
     const handleOcultar = () => {
         let iconCar = document.getElementById("icon");
         if (iconCar.style.display == 'none') {
@@ -81,6 +80,10 @@ export function ProdutoPage() {
             iconCar.style.display = "none"
         }
     }
+    const limparCarrinho = () => {
+        setCarrinho([]);
+        setContator(0);
+    };
     useEffect(() => {
         getProduto()
     }, []);
@@ -98,51 +101,45 @@ export function ProdutoPage() {
     const categories = [...new Set(produtoList.map(produto => produto.categoria))];
     return (
         <>
-            <Botao
-                handleClick={() => navegar("/")}
-                texto={'◀'}
-            />
-        
             <h1>PRODUTOS</h1>
             <p className={style.iconCar} onClick={handleOcultar}>🛒{contator}</p>
             <div className={style.corpo}>
-                <div className={style.boxproduto}>
-                {/* {categories.map(categoria => (
-                <div key={categoria}>
-                    <h2>{categoria}</h2>
-                    <ProdutoLista
-                        products={produtoList.filter(produto => produto.categoria === categoria)}
-                        onAddToCart={()=>handleVerificarCar(produto.id)}
-                    />
-                </div>
-            ))} */}
-                    {produtoList.map((pro) =>
-                        <div className={style.box} key={pro.id}>
-                            <CardProduto
-                                key={pro.id}
-                                nome={pro.nome}
-                                categoria={pro.categoria}
-                                descricao={pro.descricao}
-                                valorUnitario={pro.valorUnitario}
-                            />
-                            <div className={style.input}>
-                                <InputNumb
-                                    texto={"Quantidade: "}
-                                    placeholder={'Digite a quantidade...'}
-                                    mask={'numero'}
-                                    value={qntd[pro.id] || ''}
-                                    onChange={(e) => handleQuantidadeChange(pro.id, e.target.value)}
-                                />
-                                <Botao 
-                                    handleClick={() => handleVerificarCar(pro)}
-                                    texto={'Adiciona ao Carrinho'}
-                                />
+                <div className={style.boxproduto} >
+                    {categories.map(categoria => (
+                        <div  key={categoria}>
+                            <h2>{categoria}</h2>
+                            <div className={style.boxbebida}>
+                                {produtoList.filter(produto => produto.categoria === categoria).map((pro) =>
+                                    <div className={style.box} key={pro.id}>
+                                        <CardProduto
+                                            key={pro.id}
+                                            nome={pro.nome}
+                                            valorUnitario={pro.valorUnitario
+                                                
+                                            }
+                                        />
+                                        <div className={style.input}>
+                                            <InputNumero
+                                                texto={"Quantidade: "}
+                                                placeholder={'Digite a quantidade...'}
+                                                mask='numero'
+                                                value={qntd[pro.id] || ''}
+                                                onChange={(e) => handleQuantidadeChange(pro.id, e.target.value)}
+                                            />
+                                            <Botao
+                                                handleClick={() => handleVerificarCar(pro)}
+                                                texto={'➕'}
+                                            />
+                                        </div>
+
+                                    </div>
+                                )}
                             </div>
-                            
                         </div>
-                    )}
+                    ))}
                 </div>
                 <div id="icon" className={style.conteinerCarrinho}>
+                    <p className={style.fechar} onClick={handleOcultar}>X</p>
                     {carrinho.map((car) =>
                         <div className={style.carrinho} key={car.id}>
                             <Carrinho
@@ -152,14 +149,15 @@ export function ProdutoPage() {
                                 qntd={car.qntd}
                                 valor={car.valorBruto}
                                 handle={() => handleRemover(car.id)}
-                            />           
+                            />
                         </div>
                     )}
                     <FinalizarPedido
-                    carrinho={carrinho}
+                        carrinho={carrinho}
+                        limparCarrinho={limparCarrinho}
                     />
                 </div>
-                
+
             </div>
 
         </>

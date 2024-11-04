@@ -24,8 +24,8 @@ export function Rotas() {
                 </Route>
                     <Route path='cliente' element={<ClientePage/>}/>
                     <Route path='sobre' element={<SobrePage/>}/>
-                    <Route path='produto' element={<Produto/>}/>
-                    <Route path='produtos' element={<ProdutoPage/>}/>
+                    <Route path='produtos' element={<Produto/>}/>
+                    <Route path='produto' element={<ProdutoPage/>}/>
                     <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
                     <Route path='cadastro' element={<CadastroPage/>}/>

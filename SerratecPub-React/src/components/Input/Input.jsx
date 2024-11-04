@@ -103,6 +103,22 @@ export function InputEmail({ texto, placeholder, value, onChange }) {
         </>
     );
 };
+export function InputNumero({ texto, placeholder, value, onChange }) {
+    return (
+        <>
+            <div className={styles.containerInput}>
+                <label className={styles.label}>{texto}</label>
+                <input 
+                    className={styles.input} 
+                    type="number" 
+                    placeholder={placeholder} 
+                    value={value} 
+                    onChange={onChange} 
+                />
+            </div>
+        </>
+    );
+};
 
 export function InputDate({ texto, value, mask, onChange }) {
     const handleChange = (e) => {
