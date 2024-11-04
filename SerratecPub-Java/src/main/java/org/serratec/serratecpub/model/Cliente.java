@@ -41,10 +41,19 @@ public class Cliente {
 	
 	@PastOrPresent(message = "A data de nascimento deve ser informada no passado ou presente no formato AAAA-MM-DD")
 	private LocalDate dataNascimento;
-
+	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private Endereco endereco;
+	private String senha;
+	
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
 	public Endereco getEndereco() {
 		return endereco;

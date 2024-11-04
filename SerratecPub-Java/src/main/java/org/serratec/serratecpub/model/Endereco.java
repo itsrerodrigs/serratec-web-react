@@ -15,7 +15,7 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
-	@Size(min = 8, max = 8, message = "CEP deve conter apenas 8 digitos")
+	@Size(min = 8, max = 9, message = "CEP deve conter apenas 8 digitos")
 	private String cep;
 	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
 	@Size(min = 3, max = 50, message = TratamentoDeErro.SizeMessage)

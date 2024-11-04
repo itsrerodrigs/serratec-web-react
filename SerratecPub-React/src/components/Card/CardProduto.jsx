@@ -10,7 +10,7 @@ export function CardProduto({ nome, categoria, descricao, valorUnitario }) {
                     <h2> {nome}</h2>
                     <p> {categoria} <br /></p>
                     <p> {descricao} <br /></p>
-                    <p>Valor Unitário: R${valorUnitario.toFixed(2)} <br /></p>
+                    <p>Valor Unitário: R${valorUnitario} <br /></p>
                 </div>
             </div>
 

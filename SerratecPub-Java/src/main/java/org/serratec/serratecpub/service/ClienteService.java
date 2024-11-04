@@ -34,6 +34,11 @@ public class ClienteService {
         clienteEntity = clienteRepository.save(clienteEntity);
         return ClienteDto.toDto(clienteEntity);
     }
+    
+    public Optional<ClienteDto> verificarLogin(String email, String senha) { 
+        return clienteRepository.findByEmailAndSenha(email, senha)
+                                .map(ClienteDto::toDto);  // 
+    }
 
     public boolean excluirCliente(Long id){
         if (!clienteRepository.existsById(id)){

@@ -14,7 +14,8 @@ export function Carrinho({ nome, categoria, descricao, qntd, valor, handle }) {
                 </div>
                 <button onClick={handle}>✖</button>
             </div>
-
+        
+    
         </>
     )
 }
