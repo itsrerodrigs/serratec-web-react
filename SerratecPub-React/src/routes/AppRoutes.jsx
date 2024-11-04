@@ -10,7 +10,8 @@ import { ClientePage } from '../pages/Cliente/ClientePage';
 import { CadastroPage } from '../pages/Cadastro/CadastroPage';
 import { LoginPage } from '../pages/Login/LoginPage';
 import { TermosDeUsoPage } from '../pages/TermosDeUso/TermosDeUsoPage';
-import { CadastraProduto } from '../pages/Cadastro/CadastraProduto';
+import { ProdutoPage } from '../pages/Produto/ProdutoPage';
+
 
 export function Rotas() {
     return (
@@ -24,11 +25,12 @@ export function Rotas() {
                     <Route path='cliente' element={<ClientePage/>}/>
                     <Route path='sobre' element={<SobrePage/>}/>
                     <Route path='produto' element={<Produto/>}/>
+                    <Route path='produtos' element={<ProdutoPage/>}/>
                     <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
                     <Route path='cadastro' element={<CadastroPage/>}/>
                     <Route path='termos-de-uso' element={<TermosDeUsoPage/>}/>
-                    <Route path='cadastro/produto' element={<CadastraProduto/>}/>
+                    
                 <Route path='*' element={<NotFoundPage/>}/>
             </Routes>
         </>
