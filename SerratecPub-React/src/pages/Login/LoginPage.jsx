@@ -33,6 +33,7 @@ export function LoginPage() {
                         <InputSenha
                             className={styles.input}
                             texto="Senha: "
+                            placeholder="Digite sua senha"
                             value={senha}
                             onChange={setSenha}
                         />
