@@ -3,6 +3,7 @@ import { InputDate, InputNumb, InputSenha, InputText } from "../../components/In
 import { api } from "../../services/api";
 import styles from "./CadastroPage.module.css";
 import { useNavigate } from "react-router-dom";
+import { validarCadastro } from "../../utils/validations";
 
 export function CadastroPage() {
     
@@ -16,10 +17,14 @@ export function CadastroPage() {
     const [numero, setNumero] = useState('')
     const [complemento, setComplemento] = useState('')
     const [senha, setSenha] = useState('')
+    const [senhaConfirm, setSenhaConfirm] = useState('');
 
+    const confirmarSenha = () => {
+        return senha === senhaConfirm;
+    }
     const navigate = useNavigate();
     const handleNavigation = () => navigate('/termos-de-uso');
-    
+
     const handleCadastrar = () => {
         const novoCadastro = {
             nome,
@@ -29,31 +34,44 @@ export function CadastroPage() {
             telefone,
             endereco:{ cep, numero, complemento },  
         };
+        const errorMessage = validarCadastro(novoCadastro);
+        if (errorMessage) {
+            alert(errorMessage);
+            return;
+        }
         postCliente(novoCadastro);
     };
+
     const postCliente = async (cliente) => {
         const auth = btoa("Gustavo:teste"); 
-    
+
         try {
             await api.post('/clientes/cadastrar', cliente, {
-                headers: {
-                    'Authorization': `Basic ${auth}`,
-                    'Content-Type': 'application/json'
-                },
-                withCredentials: true
+            headers: {
+                'Authorization': `Basic ${auth}`,
+                'Content-Type': 'application/json'
+            },
+            withCredentials: true
             });
-            console.log('Cadastro foi um sucesso');
+            alert('Usuário cadastrado com sucesso');
             setCadastroList([...cadastroList, cliente]);
         } catch (error) {
-            console.error("Erro no cadastro:", error);
+            alert("Erro no cadastro: " + error.message);
         }
     };
     return (
         <>
-            <form className={styles.cadastroWrapper} onSubmit={handleCadastrar}>
+            <form className={styles.cadastroWrapper} onSubmit={(e) => {
+                e.preventDefault();
+                if (confirmarSenha()) {
+                    handleCadastrar();
+                } else {
+                    alert("As senhas devem ser iguais!");
+                }
+            }}>
                 <h2>cadastro</h2>
                 <div className={styles.divInput}>
-                <InputText
+                    <InputText
                         className={styles.input}
                         texto="Nome:"
                         placeholder="Digite seu nome"
@@ -107,7 +125,7 @@ export function CadastroPage() {
                     <InputNumb
                         className={styles.input}
                         texto="Telefone: "
-                        placeholder="+55(DDD)9 9999-9999"
+                        placeholder="+55"
                         mask="telefone"
                         value={telefone}
                         onChange={setTelefone}
@@ -115,14 +133,16 @@ export function CadastroPage() {
                     <InputSenha
                         className={styles.input}
                         texto="Senha: "
+                        placeholder={"Digite sua senha"}
                         value={senha}
                         onChange={setSenha}
                     />
                     <InputSenha
                         className={styles.input}
                         texto="Confirme sua senha: "
-                        value={senha}
-                        onChange={setSenha}
+                        placeholder="Digite sua senha"
+                        value={senhaConfirm}
+                        onChange={setSenhaConfirm}
                     />
                     <div className={styles.divTermos}>
                         <input type="checkbox"/>
@@ -132,7 +152,6 @@ export function CadastroPage() {
                     <button className={styles.buttonCadastrar} type="submit">cadastrar-se</button>
                 </div>
             </form>
-
         </>
     );
 }

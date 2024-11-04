@@ -59,14 +59,14 @@ input {
     transition: background-color 0.3s ease-in-out;
 }
 
-.divCadastro{
-    margin-top: 3vh;
-    display: flex;
-    flex-direction: row;
-    align-items: right;
-    justify-content: right;
-    font-size: 1.5vh;
-}
+.divCadastro {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  font-size: 1.5vh;
+  
 .divCadastro .buttonCadastro{
     font-size: 1.7vh;
     text-transform: uppercase;
