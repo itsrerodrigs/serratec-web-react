@@ -1,20 +1,36 @@
+.background-container {
+    position: relative;
+    background-image: url('https://i.imgur.com/fvDcFdA.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .loginWrapper{
-    background: image-url('https://www.veranda.com/travel/g36674338/beautiful-mountains/');
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 45vh;
-    margin: calc(50vh - 200px) auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+    max-width: 50vh;
+    height: 30vh;
+    margin: calc(50vh - 20vh) auto;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 1rem;
     text-transform: uppercase;
     font-family: Arvo, serif;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 5vh;
+    font-size: 3.5vh;
+    margin-bottom: 1vh;
     text-align: center;
 }
 
@@ -28,8 +44,8 @@ label {
 }
 
 input {
-    width: 100%;
-    padding: 8px;
+    width: 110%;
+    padding: 0.8rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
@@ -41,7 +57,7 @@ input {
     text-transform: uppercase;
     font-family: Arvo, serif;
     cursor: pointer;
-    width: 100%;
+    width: 110%;
     padding: 10px;
     background-color: #dfa32e;
     color: white;
@@ -58,19 +74,17 @@ input {
     display: flex;
     flex-direction: row;
     align-items: right;
-    justify-content: right;
-    font-size: 1.5vh;
+    justify-content: left;
+    font-size: 1.5vh;    
 }
 .divCadastro .buttonCadastro{
-    font-size: 1.7vh;
+    font-size: 1.4vh;
     text-transform: uppercase;
     font-family: Arvo, serif;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    padding: 1vh;
-    border: none;
-    background: none;
+    align-items: right;
+    padding: 0.5vh;
+    border: 1px solid #dfa32e;
     border-radius: 5px;
 }
 .divCadastro .buttonCadastro:hover{
@@ -93,5 +107,5 @@ input {
     transition: color 0.3s ease-in-out, text-bottom 0.1s ease-in-out;
 }
   .divCadastro .buttonCadastro:hover::after {
-    width: 100%;
+    width: 110%;
   }
