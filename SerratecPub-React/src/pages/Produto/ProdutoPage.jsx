@@ -6,10 +6,36 @@ import { useNavigate } from "react-router-dom";
 import { Carrinho } from "../../components/Card/CardCarrinho";
 import { InputNumb } from "../../components/Input/Input";
 import { Botao } from "../../components/Botao/Botao";
+import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
 
 
 export function ProdutoPage() {
-    const [produtoList, setProdutoList] = useState([]);
+    const [produtoList, setProdutoList] = useState([
+        {
+            id:30,
+            nome: 'cerveja',
+            categoria: 'Bebida',
+            descricao: 'produto.descricao',
+            qntd: 2,
+            valorBruto: 3.5
+        },
+        {
+            id:40,
+            nome: 'cerveja',
+            categoria: 'Bebida',
+            descricao: 'descricao',
+            qntd: 2,
+            valorBruto: 3.5
+        },
+        {
+            id:60,
+            nome: 'cerveja',
+            categoria: 'Bebida',
+            descricao: 'descricao',
+            qntd: 2,
+            valorBruto: 3.5
+        },
+    ]);
     const [carrinho, setCarrinho] = useState([]);
     const [qntd, setQntd] = useState(0);
     const [contator, setContator] = useState(0);
@@ -91,9 +117,9 @@ export function ProdutoPage() {
                 </div>
             ))} */}
                     {produtoList.map((pro) =>
-                        <div className={style.box}>
+                        <div className={style.box} key={pro.id}>
                             <CardProduto
-                                key={pro}
+                                key={pro.id}
                                 nome={pro.nome}
                                 categoria={pro.categoria}
                                 descricao={pro.descricao}
@@ -118,7 +144,7 @@ export function ProdutoPage() {
                 </div>
                 <div id="icon" className={style.conteinerCarrinho}>
                     {carrinho.map((car) =>
-                        <div className={style.carrinho}>
+                        <div className={style.carrinho} key={car.id}>
                             <Carrinho
                                 nome={car.nome}
                                 categoria={car.categoria}
@@ -129,6 +155,9 @@ export function ProdutoPage() {
                             />           
                         </div>
                     )}
+                    <FinalizarPedido
+                    carrinho={carrinho}
+                    />
                 </div>
                 
             </div>

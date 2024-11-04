@@ -11,7 +11,7 @@ import { CadastroPage } from '../pages/Cadastro/CadastroPage';
 import { LoginPage } from '../pages/Login/LoginPage';
 import { TermosDeUsoPage } from '../pages/TermosDeUso/TermosDeUsoPage';
 import { ProdutoPage } from '../pages/Produto/ProdutoPage';
-
+import {FinalizarPedido} from'../components/Card/FinalizarPedido';
 
 export function Rotas() {
     return (
@@ -29,6 +29,7 @@ export function Rotas() {
                     <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
                     <Route path='cadastro' element={<CadastroPage/>}/>
+                    <Route path='finaliar' element={<FinalizarPedido/>}/>
                     <Route path='termos-de-uso' element={<TermosDeUsoPage/>}/>
                     
                 <Route path='*' element={<NotFoundPage/>}/>

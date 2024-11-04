@@ -76,7 +76,7 @@ public class ProdutoController {
 		return ResponseEntity.ok(produtoDto.get());
 	}
 	
-	@PostMapping
+	@PostMapping("cadastro")
 	@ResponseStatus(HttpStatus.CREATED)
 	@Operation(summary = "Retornar o produto pelo Id", description = "Dado um determinado número de id, será retornado o pedido")
 	@ApiResponses(value = {

@@ -6,6 +6,7 @@ CREATE TABLE cliente(
 	telefone VARCHAR(15),
 	data_nascimento DATE,
 	endereco_id BIGINT,
+	senha varchar(100),
 	
 	CONSTRAINT fk_endereco FOREIGN KEY (endereco_id)
 	REFERENCES endereco(id) ON DELETE CASCADE
