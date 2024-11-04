@@ -1,5 +1,4 @@
 .loginWrapper{
-    background: image-url('https://www.veranda.com/travel/g36674338/beautiful-mountains/');
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,8 +10,15 @@
     text-transform: uppercase;
     font-family: Arvo, serif;
     font-weight: bold;
+    background-color: rgba(240, 248, 255, 0.315);
 }
-
+.corpo{
+    background-image: url('https://images-ext-1.discordapp.net/external/yYhAoiUOzzaARKAJajUmzoSjem_zHAmEFx_a9QVzXwI/https/i.imgur.com/fvDcFdA.jpg?format=webp&width=900&height=623');
+    display: flex;
+    background-repeat:no-repeat ;
+    background-size:cover ;
+    
+}
 h2 {
     font-size: 5vh;
     text-align: center;

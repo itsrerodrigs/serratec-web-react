@@ -27,7 +27,7 @@ export const Produto = () => {
                     <h2>{category}</h2>
                     <ProdutoLista
                         products={products.filter(product => product.category === category)}
-                        onAddToCart={handleAddToCart}
+                        
                     />
                 </div>
             ))}
