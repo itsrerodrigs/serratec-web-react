@@ -1,97 +1,99 @@
-.loginWrapper{
-    background: image-url('https://www.veranda.com/travel/g36674338/beautiful-mountains/');
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 45vh;
-    margin: calc(50vh - 200px) auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-transform: uppercase;
-    font-family: Arvo, serif;
-    font-weight: bold;
+.loginWrapper {
+  background: image-url(
+    "https://www.veranda.com/travel/g36674338/beautiful-mountains/"
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 45vh;
+  margin: calc(50vh - 200px) auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-transform: uppercase;
+  font-family: Arvo, serif;
+  font-weight: bold;
 }
 
 h2 {
-    font-size: 5vh;
-    text-align: center;
+  font-size: 5vh;
+  text-align: center;
 }
 
 form div {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    text-transform: none;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-transform: none;
 }
 
 .buttonEntrar {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: Arvo, serif;
-    cursor: pointer;
-    width: 100%;
-    padding: 10px;
-    background-color: #dfa32e;
-    color: white;
-    border: none;
-    border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: Arvo, serif;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  background-color: #dfa32e;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 .buttonEntrar:hover {
-    background-color: #f0c14b;
-    transition: background-color 0.3s ease-in-out;
+  background-color: #f0c14b;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.divCadastro{
-    margin-top: 3vh;
-    display: flex;
-    flex-direction: row;
-    align-items: right;
-    justify-content: right;
-    font-size: 1.5vh;
+.divCadastro {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+  font-size: 1.5vh;
 }
-.divCadastro .buttonCadastro{
-    font-size: 1.7vh;
-    text-transform: uppercase;
-    font-family: Arvo, serif;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    padding: 1vh;
-    border: none;
-    background: none;
-    border-radius: 5px;
+.divCadastro .buttonCadastro {
+  font-size: 1.7vh;
+  text-transform: uppercase;
+  font-family: Arvo, serif;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 1vh;
+  border: none;
+  background: none;
+  border-radius: 5px;
 }
-.divCadastro .buttonCadastro:hover{
-    color: #dfa32e;
-    transition: color 0.3s ease-in-out;
+.divCadastro .buttonCadastro:hover {
+  color: #dfa32e;
+  transition: color 0.3s ease-in-out;
 }
 
 .divCadastro .buttonCadastro::after {
-    content: '';
-    width: 0;
-    height: 2px;
-    display: block;
-    background: #dfa32e;
-    transition: width 0.3s ease-in-out;
-  }
-  
-.divCadastro .buttonCadastro:hover {
-    color: #dfa32e;
-    padding-bottom: 2px solid #dfa32e;
-    transition: color 0.3s ease-in-out, text-bottom 0.1s ease-in-out;
+  content: "";
+  width: 0;
+  height: 2px;
+  display: block;
+  background: #dfa32e;
+  transition: width 0.3s ease-in-out;
 }
-  .divCadastro .buttonCadastro:hover::after {
-    width: 100%;
-  }
+
+.divCadastro .buttonCadastro:hover {
+  color: #dfa32e;
+  padding-bottom: 2px solid #dfa32e;
+  transition: color 0.3s ease-in-out, text-bottom 0.1s ease-in-out;
+}
+.divCadastro .buttonCadastro:hover::after {
+  width: 100%;
+}
