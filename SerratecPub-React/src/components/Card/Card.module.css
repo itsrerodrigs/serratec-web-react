@@ -1,8 +1,9 @@
 .corpo{
     display: flex;
-    border: black solid 2px;
+    flex-direction: column;
     justify-content: center;
     margin: 10px;
+    
     
 }
 

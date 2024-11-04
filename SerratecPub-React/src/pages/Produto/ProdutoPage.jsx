@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Carrinho } from "../../components/Card/CardCarrinho";
 import { InputNumb } from "../../components/Input/Input";
 import { Botao } from "../../components/Botao/Botao";
+import ProdutoLista from "./ProdutoLista";
 
 export function ProdutoPage() {
     const [produtoList, setProdutoList] = useState([]);
@@ -68,38 +69,51 @@ export function ProdutoPage() {
             console.error("Erro ao buscar produto:", error);
         }
     };
+    const categories = [...new Set(produtoList.map(produto => produto.categoria))];
     return (
         <>
             <Botao
                 handleClick={() => navegar("/")}
                 texto={'◀'}
             />
-            <h2 onClick={()=>navegar('/cadastro/produto')}>CADASTRA PRODUTO</h2>
-            <h1>Produtos</h1>
+        
+            <h1>PRODUTOS</h1>
+            <p className={style.iconCar} onClick={handleOcultar}>🛒{contator}</p>
             <div className={style.corpo}>
                 <div className={style.boxproduto}>
+                {/* {categories.map(categoria => (
+                <div key={categoria}>
+                    <h2>{categoria}</h2>
+                    <ProdutoLista
+                        products={produtoList.filter(produto => produto.categoria === categoria)}
+                        onAddToCart={()=>handleVerificarCar(produto.id)}
+                    />
+                </div>
+            ))} */}
                     {produtoList.map((pro) =>
-                        <div>
+                        <div className={style.box}>
                             <CardProduto
                                 key={pro}
                                 nome={pro.nome}
                                 categoria={pro.categoria}
                                 descricao={pro.descricao}
-                                qntdEstoque={pro.qntdEstoque}
+
                                 valorUnitario={pro.valorUnitario}
                             />
                             <div className={style.input}>
                                 <InputNumb
                                     texto={"Quantidade: "}
+                                    placeholder={'Digite a quantidade...'}
+                                    mask={'numero'}
                                     value={qntd[pro.id] || ''}
                                     onChange={(e) => handleQuantidadeChange(pro.id, e.target.value)}
                                 />
-                                <Botao
+                                <Botao 
                                     handleClick={() => handleVerificarCar(pro)}
-                                    texto={'➕'}
+                                    texto={'Adiciona ao Carrinho'}
                                 />
                             </div>
-                            {/* <button onClick={() => }>➕</button> */}
+                            
                         </div>
                     )}
                 </div>
@@ -112,12 +126,12 @@ export function ProdutoPage() {
                                 descricao={car.descricao}
                                 qntd={car.qntd}
                                 valor={car.valorBruto}
-                            />
-                            <button onClick={() => handleRemover(car.id)}>✖</button>
+                                handle={() => handleRemover(car.id)}
+                            />           
                         </div>
                     )}
                 </div>
-                <p className={style.iconCar} onClick={handleOcultar}>🛒{contator}</p>
+                
             </div>
 
         </>
