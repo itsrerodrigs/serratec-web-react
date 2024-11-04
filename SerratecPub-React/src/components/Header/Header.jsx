@@ -1,5 +1,5 @@
 import style from "../Header/Header.module.css";
-import img from "../../assets/images/Logo1.png";
+import img from "../../assets/images/logo1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";

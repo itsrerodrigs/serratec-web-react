@@ -1,12 +1,13 @@
 import styles from "./SobrePage.module.css";
 
 import gustavoFt from "../../assets/images/gustavoFt.jpeg";
-import muriloFt from "../../assets/images/muriloFt.jpeg";
+import muriloFt from "../../assets/images/muriloFt.jpg";
 import renataFt from "../../assets/images/renataFt.jpeg";
 import isabellaFt from "../../assets/images/isabellaFt.jpeg";
 import eduardaFt from "../../assets/images/eduardaFt.jpeg";
 import lucasFt from "../../assets/images/lucasFt.jpeg";
 import thiago from "../../assets/images/thiago.png";
+import Garcom from "../../assets/images/Garcom.jpg";
 
 export function SobrePage() {
   return (
@@ -94,6 +95,10 @@ export function SobrePage() {
         <div className={styles.Descricao}>
           Thiago - Project Manager e Sommelier de Cervejas Artesanais
         </div>
+      </div>
+      <div className={styles.Membro}>
+        <img src={Garcom} alt="NossoMano" />
+        <div className={styles.Descricao}>Zepa - Faz nada e ganha muito</div>
       </div>
     </div>
   );
