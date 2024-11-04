@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Carrinho } from "../../components/Card/CardCarrinho";
 import { InputNumb } from "../../components/Input/Input";
 import { Botao } from "../../components/Botao/Botao";
-import ProdutoLista from "./ProdutoLista";
+
 
 export function ProdutoPage() {
     const [produtoList, setProdutoList] = useState([]);
@@ -97,7 +97,6 @@ export function ProdutoPage() {
                                 nome={pro.nome}
                                 categoria={pro.categoria}
                                 descricao={pro.descricao}
-
                                 valorUnitario={pro.valorUnitario}
                             />
                             <div className={style.input}>
