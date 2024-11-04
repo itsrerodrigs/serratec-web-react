@@ -54,8 +54,6 @@
   color: #000000;
   margin-top: 30px;
   line-height: 1.5;
-  text-decoration: none !important;
-  cursor: default !important;
 }
 
 .contactform input,
@@ -99,8 +97,6 @@
   margin-left: 50px;
   margin-bottom: 25px;
   line-height: 1.5;
-  text-decoration: none !important;
-  cursor: default !important;
 }
 
 .contactinfo p {

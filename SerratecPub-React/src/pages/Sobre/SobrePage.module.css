@@ -1,0 +1,41 @@
+/* SobrePage.module.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.FotoMembro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  gap: 40px;
+  padding: 40px;
+  margin-left: 10%;
+}
+
+.Membro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.Membro img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Membro img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Descricao {
+  font-size: 1rem;
+  color: #555;
+  font-size: larger;
+  font-family: Arvo, serif;
+  font-weight: bold;
+}
