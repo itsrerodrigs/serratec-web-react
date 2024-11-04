@@ -70,7 +70,7 @@ export function InputNumb({ texto, placeholder, mask, value, onChange }) {
     );
 }
 
-export function InputSenha({texto,value, onChange }) {
+export function InputSenha({texto, placeholder, value, onChange }) {
     return (
         <>
             <div className={styles.containerInput}>
@@ -78,7 +78,7 @@ export function InputSenha({texto,value, onChange }) {
                 <input 
                     className={styles.input} 
                     type="password" 
-                    placeholder="Digite aqui a senha" 
+                    placeholder={placeholder} 
                     value={value} 
                     onChange={(e) => onChange(e.target.value)}
                 />
@@ -93,9 +93,9 @@ export function InputEmail({ texto, placeholder, value, onChange }) {
             <div className={styles.containerInput}>
                 <label className={styles.label}>{texto}</label>
                 <input 
-                    className={styles.input} 
+                    className={styles.input}
                     type="email" 
-                    placeholder={placeholder} 
+                    placeholder={placeholder}
                     value={value} 
                     onChange={(e) => onChange(e.target.value)} 
                 />
@@ -164,3 +164,45 @@ export function SelectCategoria({ texto, value, handleChange }) {
         </>
     )
 }
+
+InputText.propTypes = {
+    texto: PropTypes.string,
+    placeholder: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+};
+
+InputNumb.propTypes = {
+    texto: PropTypes.string,
+    placeholder: PropTypes.string,
+    mask: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+};
+
+InputDate.propTypes = {
+    texto: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    mask: PropTypes.string,
+    onChange: PropTypes.func,
+};
+
+InputSenha.propTypes = {
+    texto: PropTypes.string,
+    placeholder: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+};
+
+InputEmail.propTypes = {
+    texto: PropTypes.string.isRequired,
+    placeholder: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+};
+
+SelectCategoria.propTypes = {
+    texto: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    handleChange: PropTypes.func,
+};

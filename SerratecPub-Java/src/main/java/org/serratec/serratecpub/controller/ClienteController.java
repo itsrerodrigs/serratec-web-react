@@ -3,7 +3,6 @@ package org.serratec.serratecpub.controller;
 import java.util.Optional;
 
 import org.serratec.serratecpub.dto.ClienteDto;
-import org.serratec.serratecpub.model.Cliente;
 import org.serratec.serratecpub.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
