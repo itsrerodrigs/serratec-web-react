@@ -5,7 +5,6 @@ const ProdutoCard = ({ product, onAddToCart }) => {
     return (
         <div className={styles.productCard}>
             <img src={product.image} alt={product.name} className={styles.productImage} />
-            <div className={styles.productInfo}></div>
             <h3>{product.nome}</h3>
             <p>R$ {product.valorUnitario}</p>
             <button onClick={() => onAddToCart(product)}>Adicionar ao Carrinho</button>

@@ -17,9 +17,7 @@ export function LoginPage() {
     };
 
     return (
-        <div class={styles.backgroundContainer}>
         <div className={styles.loginWrapper}>
-            <div className={styles.loginWrapper}>
             <h2>Login</h2>
             <form onSubmit={enviar}>
             <InputText
@@ -43,8 +41,6 @@ export function LoginPage() {
                     <button onClick={handleNavigation} className={styles.buttonCadastro}>Cadastre-se</button>
                 </div>
             </form>
-            </div>
-        </div>
         </div>
     );
 };
