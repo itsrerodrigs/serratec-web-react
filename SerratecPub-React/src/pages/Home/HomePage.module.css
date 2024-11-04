@@ -2,7 +2,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arvo, serif;
+    font-family: Arvo, serif; 
   }
   
   .container_a{
@@ -11,6 +11,7 @@
     height: 100vh;
     background-color: #fff;
     overflow: hidden;
+
   }
   
   .tabs input{
@@ -39,12 +40,12 @@
   .tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
   .tabs input:nth-child(2):checked ~ .buttons label:nth-child(2),
   .tabs input:nth-child(3):checked ~ .buttons label:nth-child(3) {
-    opacity: 1;
-    width: 50px;
+    opacity: 2;
+    width: 70px;
   } 
   
   .content{
-    position: relative;
+    position: relative; 
     width: 300vw;
     display:flex;
     transition: 0.5s;
@@ -62,7 +63,7 @@
   {
     background-image: url('../../assets/images/home-bar11.png');
     background-size: cover;
-  
+    animation: appear 1s; 
   }
   .content .box:nth-child(2)
   {
@@ -88,115 +89,108 @@
   {
     left: -200vw;
   }
-  .content .box .contentBx{
+
+  .content .box {
     display: flex;
-    justify-content: center;
     align-items:center;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: flex-start;
+    
+  }
+
+  .content .box .contentBx{
+    margin-left: 15%;
   }
   
   .content .box .contentBx h2{
     font-size: 50px;
     color: #fff;
-    text-shadow: #5d4f72 3px 3px 2px;
-    margin-right: 670px;
-    margin-left: 400px;
+    text-shadow: #5d4d75 5px 3px 2px;
+    text-align:left;
+    text-decoration: none; 
+    
   }
   
-  .content .box .contentBx .button_home{
-    margin-top: 15px;
-    border:none;
-    padding: 9px 15px;
-    cursor: pointer;
-    transition: transform 0.5s ease;
-    border-radius: 9px;
-    background-color:#5d4f72 ;
-    color:#fff;
-    text-decoration: none;
-    font-size: 12px;
-    margin-right: 670px;
-    margin-left: 295px;
-  }
-  .button_home:hover{
-    transform: scale(1.2)
-  }
-  
-  .content .box{
-    display:flex;
-    justify-content: flex-start;
-  }
+  /*Container B*/
+
    .container_b{
     display: flex;
-    align-items: flex-start;
-    margin-left: 300px;
-    margin-top: 10px;}
-  
-  .container_b img{
-    width: 40%;
-    margin-right: 30px;
-  }
-  .container_b .container_b_about{
-    margin-right: 100px;
-  }
-  .container_b .container_b_about h2{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-size: 40px;
+        
+  }
+  
+ .container_b img{
+    width: 30%; 
+    height: 20%;
+    margin-left: 80px;  
+    
+  } 
+  
+  .container_b .container_b_about{
+    width: 30vw; 
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+
+ .container_b .container_b_about h2{
+    text-decoration: none; 
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 20px;
   }
   .container_b .container_b_about p{
-    padding: 15px;
     text-align:justify;
     font-size: 15px;
-  } 
-  .container_c {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    padding: 50px;
-  }
-  
+    line-height: 1.5;
+  }   
+
+  /*Container C*/
   .container_c_box {
     display: flex;
     gap: 20px; 
     width: 100%;
-    max-width: 1200px; 
+    max-width: 1500vw; 
     justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    padding:25px;
+
   }
   
   .boxImg1, .boxImg2, .boxImg3 {
     position: relative;
     flex: 1; 
-    min-width: 300px; 
+    min-width: 50px; 
   }
   
   .boxImg1 img, .boxImg2 img, .boxImg3 img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 20px;
+    animation: appear 1s; 
+    animation-timeline: scroll();
+  }
+
+ 
+  
+  @keyframes appear{
+    from{
+      opacity: 0;
+      translate: -100vw 0;
+    }
+    to {
+      opacity: 1;
+      traslate: 0 0;
+    }
   }
   
-  /* Estilo para o figcaption como botão */
-  .boxImg1 figcaption, .boxImg2 figcaption, .boxImg3 figcaption {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .boxImg1 figcaption:hover, .boxImg2 figcaption:hover, .boxImg3 figcaption:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  
-  
-  
-  
+  /* @media screen and (max-width: 768px){
+    .container_a .container_b .container_c{
+      display: block; 
+      background-image: none;
+    }
+  } */
