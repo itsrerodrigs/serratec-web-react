@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -44,7 +44,7 @@
   font-family: Arvo, serif;
 }
 .containerHeader .link::after {
-  content: '';
+  content: "";
   width: 0;
   height: 2px;
   display: block;
@@ -67,12 +67,12 @@
 
 .user {
   cursor: pointer;
-  color: white;
   font-size: 3vh;
   margin: 0vh 5vh 0vh -5vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 .user:hover {
   padding: 1vh;
