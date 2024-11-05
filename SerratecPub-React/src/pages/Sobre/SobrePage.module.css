@@ -6,7 +6,7 @@
 
 .FotoMembro {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding: 40px;
   margin-left: 10%;
@@ -38,6 +38,18 @@
   font-size: larger;
   font-family: Arvo, serif;
   font-weight: bold;
+}
+.githubIcon {
+  color: #333;
+  font-size: 1.5em;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.githubIcon:hover {
+  color: #000;
 }
 
 /* Responsividade */

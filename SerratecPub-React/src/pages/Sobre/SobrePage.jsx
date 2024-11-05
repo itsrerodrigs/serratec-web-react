@@ -1,7 +1,9 @@
 import styles from "./SobrePage.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import gustavoFt from "../../assets/images/gustavoFt.jpeg";
-import muriloFt from "../../assets/images/muriloFt.jpeg";
+import murilo from "../../assets/images/murilo.jpg";
 import renataFt from "../../assets/images/renataFt.jpeg";
 import isabellaFt from "../../assets/images/isabellaFt.jpeg";
 import eduardaFt from "../../assets/images/eduardaFt.jpeg";
@@ -21,20 +23,38 @@ export function SobrePage() {
         </a>
         <div className={styles.Descricao}>
           Gustavo - Mestre do Café e das Noites em Claro
+          <a
+            href="https://github.com/Gustavo-c-s"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubIcon}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </div>
+
       <div className={styles.Membro}>
         <a
           href="https://www.linkedin.com/in/murilobongard/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={muriloFt} alt="Murilo" />
+          <img src={murilo} alt="Murilo" />
         </a>
         <div className={styles.Descricao}>
           Murilo - Rei das Noites de Código e Happy Hours
+          <a
+            href="https://github.com/murilobongard"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubIcon}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </div>
+
       <div className={styles.Membro}>
         <a
           href="https://www.linkedin.com/in/lucas-c-071903265/"
@@ -45,8 +65,17 @@ export function SobrePage() {
         </a>
         <div className={styles.Descricao}>
           Lucas - UX Designer e Degustador Oficial de Brejas
+          <a
+            href="https://github.com/lucauxs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubIcon}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </div>
+
       <div className={styles.Membro}>
         <a
           href="https://www.linkedin.com/in/eduarda"
@@ -57,8 +86,17 @@ export function SobrePage() {
         </a>
         <div className={styles.Descricao}>
           Eduarda - Especialista em DevOps e Rodadas de Chopp
+          <a
+            href="https://github.com/Eduarda-goular"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubIcon}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </div>
+
       <div className={styles.Membro}>
         <a
           href="https://www.linkedin.com/in/isabellaoliveira-pinheiro/"
@@ -69,8 +107,17 @@ export function SobrePage() {
         </a>
         <div className={styles.Descricao}>
           Isabella - Caçadora de Bugs e Entusiasta dos Drinks Exóticos
+          <a
+            href="https://github.com/isb-op"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubIcon}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </div>
+
       <div className={styles.Membro}>
         <a
           href="https://www.linkedin.com/in/rerodrigs/"
@@ -81,8 +128,17 @@ export function SobrePage() {
         </a>
         <div className={styles.Descricao}>
           Renata - Fullstack das Linhas de Código e da Caipirinha
+          <a
+            href="https://github.com/itsrerodrigs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubIcon}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </div>
+
       <div className={styles.Membro}>
         <a
           href="https://www.linkedin.com/in/thiago-branco-nf/"
@@ -93,6 +149,14 @@ export function SobrePage() {
         </a>
         <div className={styles.Descricao}>
           Thiago - Project Manager e Sommelier de Cervejas Artesanais
+          <a
+            href="https://github.com/thiagobranconf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubIcon}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </div>
     </div>
