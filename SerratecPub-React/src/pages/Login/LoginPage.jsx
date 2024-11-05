@@ -18,13 +18,13 @@ export function LoginPage() {
         
     };
     
-    const handleSignIn = async(e)=>{
-        e.preventDefault();
-        const data = {
-            email,senha,
-        };
-        await signIn(data);
-    };
+    // const handleSignIn = async(e)=>{
+    //     e.preventDefault();
+    //     const data = {
+    //         email,senha,
+    //     };
+    //     await signIn(data);
+    // };
     if(signed){
         return<Navigate to='/home'/>
     }
@@ -32,7 +32,8 @@ export function LoginPage() {
         try {
             api.get(`/clientes/login/${email}/${senha }`)
             .then((response) => {
-                setCliente(response.data);
+                localStorage.setItem ("@Auth:user", JSON.stringify(response.data));
+                setCliente(JSON.stringify(response.data));
                 alert((cliente.nome));
                 setEmail('');
                 setSenha('');
@@ -56,7 +57,7 @@ export function LoginPage() {
 
             <div id='logi' className={styles.loginWrapper}>
                 <h2>Login</h2>
-                <form onSubmit={handleSignIn}>
+                <form onSubmit={enviar}>
                     <InputText
                         className={styles.input}
                         texto="Email: "
