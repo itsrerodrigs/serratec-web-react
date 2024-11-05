@@ -1,4 +1,3 @@
-import styles from "./SobrePage.module.css";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import gustavoFt from "../../assets/images/gustavoFt.jpeg";
 import murilo from "../../assets/images/murilo.jpg";
@@ -172,7 +171,7 @@ export function SobrePage() {
         <Descricao>
           <Nome>Clerinton Savio</Nome>
           <br />
-          Faz tudo e ganha nada
+          Eu entrego e me humilho pra receber dinheiro de gorjeta
         </Descricao>
       </Membro>
     </FotoMembro>
