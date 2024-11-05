@@ -49,7 +49,6 @@ export function ProdutoPage() {
             descricao: produto.descricao,
             qntd: quantidade,
             valorBruto: valorBruto
-
         };
         setValorTotal( carrinho.reduce((acc, item) => acc + item.valorBruto, 0)),
         console.log()

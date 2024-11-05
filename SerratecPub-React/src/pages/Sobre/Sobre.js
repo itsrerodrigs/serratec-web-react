@@ -45,16 +45,21 @@ export const ImagemMembro = styled.img`
 `;
 
 export const Descricao = styled.div`
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #555;
   font-size: larger;
   font-family: Arvo, serif;
-  font-weight: bold;
 
   @media (max-width: 600px) {
     font-size: 0.9rem;
   }
 `;
+
+export const Nome = styled.span`
+  font-family: Arvo, serif;
+  font-weight: bold;
+  color: #555;
+`
 
 export const GithubIcon  = styled(FontAwesomeIcon) `
     color: #333;
