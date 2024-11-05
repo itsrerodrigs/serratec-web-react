@@ -4,7 +4,7 @@ import { NotFoundPage } from '../pages/NotFound/NotFoundPage';
 import { HomePage } from '../pages/Home/HomePage';
 import { SobrePage } from '../pages/Sobre/SobrePage';
 import { ContatoPage } from '../pages/Contato/ContatoPage';
-import { LandingPage } from '../pages/Landing/LandingPage';
+import { Produto } from '../pages/Produto/Produto';
 import { ClientePage } from '../pages/Cliente/ClientePage';
 import { CadastroPage } from '../pages/Cadastro/CadastroPage';
 import { LoginPage } from '../pages/Login/LoginPage';
@@ -19,7 +19,6 @@ export function Rotas() {
             <Routes>
                 <Route path='/' element={<Layout/>}>
                     <Route index element={<HomePage/>}/>
-                    <Route path='a-melhor-loja-de-bebidas-do-mundo' element={<LandingPage/>}/>
                 </Route>
                     <Route path='cliente' element={<ClientePage/>}/>
                     <Route path='sobre' element={<SobrePage/>}/>              
@@ -27,6 +26,7 @@ export function Rotas() {
                     <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
                     <Route path='cadastro' element={<CadastroPage/>}/>
+                    <Route path='finalizar' element={<FinalizarPedido/>}/>
                     <Route path='termos-de-uso' element={<TermosDeUsoPage/>}/>
                     
                 <Route path='*' element={<NotFoundPage/>}/>

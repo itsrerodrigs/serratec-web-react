@@ -4,22 +4,22 @@
   box-sizing: border-box;
 }
 
-.FotoMembro {
+/* .FotoMembro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding: 40px;
   margin-left: 10%;
-}
+} */
 
-.Membro {
+/* .Membro {
   display: flex;
   align-items: center;
   gap: 20px;
   text-align: left;
-}
+} */
 
-.Membro img {
+/* .Membro img {
   width: 150px;
   height: 150px;
   object-fit: cover;
@@ -30,16 +30,16 @@
 .Membro img:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+} */
 
-.Descricao {
+/* .Descricao {
   font-size: 1rem;
   color: #555;
   font-size: larger;
   font-family: Arvo, serif;
   font-weight: bold;
-}
-.githubIcon {
+} */
+/* .githubIcon {
   color: #333;
   font-size: 1.5em;
   display: block;
@@ -50,10 +50,10 @@
 
 .githubIcon:hover {
   color: #000;
-}
+} */
 
-/* Responsividade */
-@media (max-width: 1100px) {
+/* Responsividade
+@media (max-width: 768px) {
   .FotoMembro {
     grid-template-columns: 1fr;
     margin-left: 0;
@@ -85,4 +85,4 @@
   .Descricao {
     font-size: medium;
   }
-}
+} */
