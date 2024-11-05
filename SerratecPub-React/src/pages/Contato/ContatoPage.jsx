@@ -4,10 +4,10 @@ import efeito from "../../assets/images/efeito-1.png";
 export function ContatoPage() {
   return (
     <>
-      <header className={style.header}>
+      <main className={style.main}>
         <h1>FALE COM A GENTE</h1>
         <img src={efeito} alt="efeito" />
-      </header>
+      </main>
       <div className={style.contactcontainer}>
         <div className={style.contactcontent}>
           <div className={style.contactform}>
@@ -32,11 +32,15 @@ export function ContatoPage() {
             <p>De terça a quarta, das 16h portaria fecha 00h</p>
             <p>Quinta a sábado, das 16h portaria fecha 1h30</p>
             <p>Domingo, das 15h portaria fecha 00h</p>
-            <img src={efeito} className={style.horario} alt="efeito" />
+            <div className={style.horario}>
+              <img src={efeito} alt="efeito" />
+            </div>
             <h2>TELEFONES</h2>
-            <p>+55 (11) 3284 8338</p>
-            <p>+55 (11) 2609 8233</p>
-            <img src={efeito} className={style.horario} alt="efeito" />
+            <p>+55 (24) 1557 7894</p>
+            <p>+55 (21) 2354 7845</p>
+            <div className={style.horario}>
+              <img src={efeito} alt="efeito" />
+            </div>
             <h2>INFORMAÇÕES</h2>
             <p>Permitida a entrada somente de maiores de 18 anos.</p>
             <p>Homens não é permitido a entrada vestindo regatas.</p>
