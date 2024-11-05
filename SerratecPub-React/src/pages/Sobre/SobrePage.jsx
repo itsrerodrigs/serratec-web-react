@@ -115,7 +115,7 @@ export function SobrePage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ImagemMembro src={renataFt} alt="Renata" />
+          <ImagemMembro src={renataFt} alt="Renata"/>
         </a>
         <Descricao>
           <Nome>Renata Rodrigues</Nome><br/>Fullstack das Linhas de Código e da Caipirinha
