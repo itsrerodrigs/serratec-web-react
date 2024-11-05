@@ -2,7 +2,6 @@ package org.serratec.serratecpub.model;
 
 import java.time.LocalDate;
 
-import org.hibernate.validator.constraints.br.CPF;
 import org.serratec.serratecpub.util.TratamentoDeErro;
 
 import jakarta.persistence.CascadeType;

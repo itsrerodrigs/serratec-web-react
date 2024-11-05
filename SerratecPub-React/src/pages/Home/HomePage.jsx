@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './HomePage.module.css';
-import imgDrink from '../../assets/images/pub.png';
-import imgProdutos from '../../assets/images/home-bar222.png';
-import imgContatos from '../../assets/images/home-bar3333.png';
-import imgBar from '../../assets/images/home-bar44.png';
+import Pub from '../../assets/images/pub.png';
+import imgBar1 from '../../assets/images/home-bar222.png';
+import imgBar2 from '../../assets/images/home-bar3333.png';
+import imgBar3 from '../../assets/images/home-bar44.png';
 
 export function HomePage() {
     return(
@@ -22,20 +22,19 @@ export function HomePage() {
                         <div className={styles.content}>
                             <div className={styles.box}>
                                 <div className={styles.contentBx}>
-                                    <h2>O Break que Todo Dev Merece</h2>
-                                    <a className={styles.button_home} href="/">
-                                        REPOSITÓRIO DE BEBIDAS
-                                    </a>
+                                    <h2>O Break <br/>que Todo<br/> Dev Merece</h2>
                                 </div>
                             </div>
+
                             <div className={styles.box}>
                                 <div className={styles.contentBx}>
-                                    <h2>Wi-Fi rápido e cerveja gelada, combinação perfeita!</h2>
+                                    <h2>Wi-Fi rápido <br/>e cerveja gelada,<br/> combinação perfeita!</h2>
                                 </div>
                             </div>
+
                             <div className={styles.box}>
                                 <div className={styles.contentBx}>
-                                    <h2>Pausa estratégica para quem vive em modo ‘run’.</h2>
+                                    <h2>Pausa estratégica <br/> para quem vive <br/>em modo ‘run’.</h2>
                                 </div>
                             </div>
                         </div>
@@ -54,23 +53,20 @@ export function HomePage() {
                             No SerratecPub, seu happy hour vira linha de código!
                         </p>
                     </div>
-                    <img src={imgDrink} alt="Imagem de bebida" />
+                    <img src={Pub} alt="Ilustração de prédio antigo representativo do Serratec Pub" />
                 </section>
                 <section className={styles.container_c}>
                     <div className={styles.container_c_box}>
                         <div className={styles.boxImg1}>
-                            <img src={imgProdutos} alt="Imagem de produtos" />
-                            <figcaption>Produtos</figcaption>
+                            <img src={imgBar1} alt="Objetos de enfeite posicionados sobre a bancada de um bar." />
                         </div>
 
                         <div className={styles.boxImg2}>
-                            <img src={imgContatos} alt="Imagem de contatos" />
-                            <figcaption>Equipe</figcaption>
+                            <img src={imgBar2} alt="Duas pessoas sentadas na bancada de um bar, com várias bebidas expostas e copos pendurados." />
                         </div>
 
                         <div className={styles.boxImg3}>
-                            <img src={imgBar} alt="Imagem do bar" />
-                            <figcaption>Fale conosco!</figcaption>
+                            <img src={imgBar3} alt="Dois copos de drinks posicionados lado a lado sob uma bancada de bar." />
                         </div>
                     </div>
                 </section>

@@ -1,22 +1,28 @@
 .loginWrapper {
-  background: image-url(
-    "https://www.veranda.com/travel/g36674338/beautiful-mountains/"
-  );
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 45vh;
+  max-width: 60vh;
+  min-height: 400px;
   margin: calc(50vh - 200px) auto;
-  padding: 20px;
+  padding: 50px;
   border: 1px solid #ccc;
+  border-radius: 12px;
   text-transform: uppercase;
   font-family: Arvo, serif;
   font-weight: bold;
+  background-color: white;
 }
-
+.corpo {
+  background-image: url("https://images-ext-1.discordapp.net/external/yYhAoiUOzzaARKAJajUmzoSjem_zHAmEFx_a9QVzXwI/https/i.imgur.com/fvDcFdA.jpg?format=webp&width=900&height=623");
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 h2 {
-  font-size: 5vh;
+  font-size: 3.5vh;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -59,10 +65,27 @@ input {
   margin-top: 3vh;
   display: flex;
   flex-direction: row;
-  align-items: right;
+  align-items: center;
   justify-content: right;
   font-size: 1.5vh;
 }
+  
+.divCadastro .buttonCadastro{
+    font-size: 1.5vh;
+    font-weight: 600;
+    color: #dfa32e;
+    margin-top: -1vh;
+    text-transform: uppercase;
+    font-family: Arvo, serif;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    border: none;
+    background: none;
+    border-radius: 5px;
+}
+
 .divCadastro .buttonCadastro {
   font-size: 1.7vh;
   text-transform: uppercase;

@@ -34,15 +34,19 @@ h2 {
     padding: 0;
     margin: 0;
     transform: scale(1.2);
+    margin-top: -1vh;
     width: 10%;
 }
+
 .divTermos p{
     font-size: 1.7vh;
     display: inline;
     font-family: Arvo, serif;
 }
 .divTermos .buttonTermos{
+    color: #dfa32e;
     font-size: 1.7vh;
+    margin-top: -1vh;
     text-transform: uppercase;
     font-family: Arvo, serif;
     font-weight: bold;
@@ -55,7 +59,7 @@ h2 {
     border-radius: 5px;
 }
 .divTermos .buttonTermos:hover{
-    color: #dfa32e;
+    color: #f0c14b;
     transition: color 0.3s ease-in-out;
 }
 
@@ -69,7 +73,7 @@ h2 {
   }
   
 .divTermos .buttonTermos:hover {
-    color: #dfa32e;
+    color: #f0c14b;
     padding-bottom: 2px solid #dfa32e;
     transition: color 0.3s ease-in-out, text-bottom 0.1s ease-in-out;
 }
