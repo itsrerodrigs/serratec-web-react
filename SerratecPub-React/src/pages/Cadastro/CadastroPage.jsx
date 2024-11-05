@@ -4,6 +4,7 @@ import { api } from "../../services/api";
 import styles from "./CadastroPage.module.css";
 import { useNavigate } from "react-router-dom";
 import { validarCadastro } from "../../utils/validations";
+import { formatarBanco } from "../../utils/formatarBanco";
 
 export function CadastroPage() {
     
@@ -32,19 +33,26 @@ export function CadastroPage() {
             dataNascimento,
             email,
             telefone,
-            endereco:{ cep, numero, complemento },  
+            cep,
+            numero,
+            complemento,
+            senha,
+            senhaConfirm
         };
         const errorMessage = validarCadastro(novoCadastro);
         if (errorMessage) {
             alert(errorMessage);
             return;
         }
-        postCliente(novoCadastro);
+        const formatarInfos = formatarBanco(novoCadastro);
+        if (formatarInfos) {
+            postCliente(novoCadastro);
+            return;
+        }
     };
 
     const postCliente = async (cliente) => {
-        const auth = btoa("Gustavo:teste"); 
-
+        const auth = btoa("Gustavo:teste");
         try {
             await api.post('/clientes/cadastrar', cliente, {
             headers: {
@@ -55,7 +63,8 @@ export function CadastroPage() {
             });
             alert('Usuário cadastrado com sucesso');
             setCadastroList([...cadastroList, cliente]);
-        } catch (error) {
+        } 
+        catch (error) {
             alert("Erro no cadastro: " + error.message);
         }
     };
@@ -149,7 +158,7 @@ export function CadastroPage() {
                         <p>Li e aceito os</p>
                         <button onClick={handleNavigation} className={styles.buttonTermos}>termos de uso</button>
                     </div>
-                    <button className={styles.buttonCadastrar} type="submit">cadastrar-se</button>
+                    <button onClick={()=>handleCadastrar} className={styles.buttonCadastrar} >cadastrar-se</button>
                 </div>
             </form>
         </>

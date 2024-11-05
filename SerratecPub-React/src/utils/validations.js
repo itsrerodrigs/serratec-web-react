@@ -1,6 +1,10 @@
 export function validarCadastro(cliente) {
 const { cpf, dataNascimento, email, telefone, cep, numero, senha, senhaConfirm } = cliente;
 
+    if (cpf && dataNascimento && email && telefone && cep && numero && senha && senhaConfirm == null) {
+        return 'Preencha todos os campos';
+    }
+
     if (!cpf) {
         return "CPF é obrigatório";
     }

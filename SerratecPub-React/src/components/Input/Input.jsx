@@ -22,33 +22,26 @@ export function InputNumb({ texto, placeholder, mask, value, onChange }) {
     const handleChange = (e) => {
         let newValue = e.target.value;
         if (mask) {
-            newValue = newValue.replace(/\D/g, '');
+            newValue = newValue.replace(/\D/g, ''); //vai pegar / \D (não digitos) / g (globais) e substituir por vazio
             if (mask === 'telefone') {
-                newValue = newValue.replace(/\D/g, ''); // Remove non-numeric characters
-                newValue = newValue.replace(/^(\d{2})(\d{2})(\d{1})(\d{4})(\d{4})/, '+$1 ($2) $3 $4-$5');
-                if (newValue.length > 20) {
-                    newValue = newValue.slice(0, 20);
-                }
+                (newValue.length > 14) ? newValue = newValue.slice(0, 14) : newValue;
+                // newValue = newValue.replace(/^(\d{2})(\d{1})(\d{4})(\d{4})/, '($1)$2 $3-$4'); // faz a regEx e depois formata
             }
             if (mask === 'cep') {
-                newValue = newValue.replace(/(\d{5})(\d{3})/, '$1-$2');
-                if (newValue.length > 15) {
-                    newValue = newValue.slice(0, 15);
-                }
+                (newValue.length > 9) ? newValue = newValue.slice(0, 9) : newValue;
+                // newValue = newValue.replace(/(\d{5})(\d{3})/, '$1-$2');
             }
             if (mask === 'cpf') {
-                newValue = newValue.replace(/(\d{3})(\d)/, '$1.$2');
-                newValue = newValue.replace(/(\d{3})(\d)/, '$1.$2');
-                newValue = newValue.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-                if (newValue.length > 14) {
-                    newValue = newValue.slice(0, 14);
-                }
+                (newValue.length > 14) ? newValue = newValue.slice(0, 14) : newValue;
+                // newValue = newValue.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')
             }
-            if (mask === 'numero') {
-                if (newValue.length > 6) {
-                    newValue = newValue.slice(0, 6);
-                }
+            if (mask === 'numeroCasa') {
+                (newValue.length > 7? newValue = newValue.slice(0,7): newValue)
             }
+            if(mask === 'numero'){
+                (newValue.length > 100? newValue = newValue.slice(0,100): newValue)
+            }
+            
         }
         onChange(newValue);
     };
@@ -103,22 +96,6 @@ export function InputEmail({ texto, placeholder, value, onChange }) {
         </>
     );
 };
-export function InputNumero({ texto, placeholder, value, onChange }) {
-    return (
-        <>
-            <div className={styles.containerInput}>
-                <label className={styles.label}>{texto}</label>
-                <input 
-                    className={styles.input} 
-                    type="number" 
-                    placeholder={placeholder} 
-                    value={value} 
-                    onChange={onChange} 
-                />
-            </div>
-        </>
-    );
-};
 
 export function InputDate({ texto, value, mask, onChange }) {
     const handleChange = (e) => {
@@ -164,7 +141,6 @@ export function SelectCategoria({ texto, value, handleChange }) {
         </>
     )
 }
-
 InputText.propTypes = {
     texto: PropTypes.string,
     placeholder: PropTypes.string,
@@ -176,7 +152,7 @@ InputNumb.propTypes = {
     texto: PropTypes.string,
     placeholder: PropTypes.string,
     mask: PropTypes.string,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
     onChange: PropTypes.func,
 };
 
