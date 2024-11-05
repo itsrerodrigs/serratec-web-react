@@ -9,6 +9,8 @@ import eduardaFt from "../../assets/images/eduardaFt.jpeg";
 import lucasFt from "../../assets/images/lucasFt.jpeg";
 import thiago from "../../assets/images/thiago.png";
 import { FotoMembro, Membro, Descricao, ImagemMembro, GithubIcon } from './Sobre.js';
+import Garcom from "../../assets/images/Garcom.jpg";
+
 
 export function SobrePage() {
   return (

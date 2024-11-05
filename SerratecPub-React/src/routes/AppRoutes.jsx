@@ -10,7 +10,7 @@ import { CadastroPage } from '../pages/Cadastro/CadastroPage';
 import { LoginPage } from '../pages/Login/LoginPage';
 import { TermosDeUsoPage } from '../pages/TermosDeUso/TermosDeUsoPage';
 import { ProdutoPage } from '../pages/Produto/ProdutoPage';
-import {FinalizarPedido} from'../components/Card/FinalizarPedido';
+
 
 export function Rotas() {
     return (
@@ -21,8 +21,7 @@ export function Rotas() {
                     <Route index element={<HomePage/>}/>
                 </Route>
                     <Route path='cliente' element={<ClientePage/>}/>
-                    <Route path='sobre' element={<SobrePage/>}/>
-                    <Route path='produtos' element={<Produto/>}/>
+                    <Route path='sobre' element={<SobrePage/>}/>              
                     <Route path='produto' element={<ProdutoPage/>}/>
                     <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
