@@ -38,7 +38,7 @@ export function ProdutoPage() {
     const [carrinho, setCarrinho] = useState([]);
     const [qntd, setQntd] = useState(0);
     const [contator, setContator] = useState(0);
-
+    const [valorTotal,setValorTotal]=useState(0)
     const handleAddCarin = (produto) => {
         const quantidade = qntd[produto.id] || 0;
         const valorBruto = (produto.valorUnitario * 2) * quantidade;
@@ -51,6 +51,7 @@ export function ProdutoPage() {
             valorBruto: valorBruto
 
         };
+        setValorTotal( carrinho.reduce((acc, item) => acc + item.valorBruto, 0)),
         console.log()
         setCarrinho([...carrinho, addCarrinho]);
         setContator(contator + 1);
@@ -65,8 +66,8 @@ export function ProdutoPage() {
             handleAddCarin(produto);
         }
     }
-    const handleRemover = (index) => {
-        setCarrinho(carrinho.filter(produto => produto.id !== index));
+    const handleRemover = (id) => {
+        setCarrinho(carrinho.filter(produto => produto.id !== id));
         setContator(contator - 1);
     };
     const handleQuantidadeChange = (produtoId, value) => {
@@ -87,6 +88,10 @@ export function ProdutoPage() {
     useEffect(() => {
         getProduto()
     }, []);
+    useEffect(() => {
+        const total = carrinho.reduce((acc, item) => acc + item.valorBruto, 0);
+        setValorTotal(total.toFixed(2)); 
+    }, [carrinho]);
     const getProduto = async () => {
         try {
             api.get('/produtos'
@@ -114,9 +119,8 @@ export function ProdutoPage() {
                                         <CardProduto
                                             key={pro.id}
                                             nome={pro.nome}
-                                            valorUnitario={pro.valorUnitario
-                                                
-                                            }
+                                            descricao={pro.descricao}
+                                            valorUnitario={pro.valorUnitario?.toFixed(2)}
                                         />
                                         <div className={style.input}>
                                             <InputNumero
@@ -147,14 +151,15 @@ export function ProdutoPage() {
                                 categoria={car.categoria}
                                 descricao={car.descricao}
                                 qntd={car.qntd}
-                                valor={car.valorBruto}
+                                valor={car.valorBruto?.toFixed(2)}
                                 handle={() => handleRemover(car.id)}
                             />
                         </div>
                     )}
+                    <p>Valor Total: R${valorTotal}</p>
                     <FinalizarPedido
                         carrinho={carrinho}
-                        limparCarrinho={limparCarrinho}
+                        limparCarrinho={()=>limparCarrinho()}
                     />
                 </div>
 

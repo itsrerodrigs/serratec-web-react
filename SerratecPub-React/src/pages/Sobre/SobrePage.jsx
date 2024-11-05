@@ -9,6 +9,7 @@ import isabellaFt from "../../assets/images/isabellaFt.jpeg";
 import eduardaFt from "../../assets/images/eduardaFt.jpeg";
 import lucasFt from "../../assets/images/lucasFt.jpeg";
 import thiago from "../../assets/images/thiago.png";
+import Garcom from "../../assets/images/Garcom.jpg";
 
 export function SobrePage() {
   return (
@@ -157,6 +158,13 @@ export function SobrePage() {
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
+        </div>
+      </div>
+      <div className={styles.Membro}>
+        <img src={Garcom} alt="Garcom" />
+
+        <div className={styles.Descricao}>
+          Cleriton Savio - Faz muito e ganha pouco
         </div>
       </div>
     </div>
