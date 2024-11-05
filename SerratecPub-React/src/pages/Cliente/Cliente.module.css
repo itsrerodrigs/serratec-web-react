@@ -1,7 +1,10 @@
 .boxcliente{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    flex: 1;
     justify-content: center;
-    background-color: #1f1e1e;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    gap:10px;
+    align-items: center;
+    text-align: center;
 }

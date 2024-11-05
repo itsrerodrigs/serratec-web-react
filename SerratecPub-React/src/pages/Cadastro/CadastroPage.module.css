@@ -25,11 +25,11 @@ h2 {
 
 .divTermos{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    text-align: center;
     justify-content: center;
 }
 .divTermos input{
+    align-items: center;
     margin-right: 1vh;
     padding: 0;
     margin: 0;
@@ -42,6 +42,11 @@ h2 {
     font-size: 1.7vh;
     display: inline;
     font-family: Arvo, serif;
+}
+.divTermos input{
+    width: 10px;
+    margin-right: 10px;
+    margin-bottom: 3px;
 }
 .divTermos .buttonTermos{
     color: #dfa32e;
