@@ -7,14 +7,14 @@ import imgBar3 from '../../assets/images/home-bar44.png';
 
 
 export function HomePage() {
-     return(
+        return(
         <>
             <main>
                 <section className={styles.container_a}>
                     <div className={styles.tabs}>
-                        <input id="radio1" type="radio" name="slider" defaultChecked />
-                        <input id="radio2" type="radio" name="slider" />
-                        <input id="radio3" type="radio" name="slider" />
+                        <input id="home1" type="radio" name="slider" defaultChecked />
+                        <input id="home2" type="radio" name="slider" />
+                        <input id="home3" type="radio" name="slider" />
                         <div className={styles.buttons}>
                             <label htmlFor="home1"></label>
                             <label htmlFor="home2"></label>
