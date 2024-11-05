@@ -4,7 +4,6 @@ import { NotFoundPage } from '../pages/NotFound/NotFoundPage';
 import { HomePage } from '../pages/Home/HomePage';
 import { SobrePage } from '../pages/Sobre/SobrePage';
 import { ContatoPage } from '../pages/Contato/ContatoPage';
-import { Produto } from '../pages/Produto/Produto';
 import { ClientePage } from '../pages/Cliente/ClientePage';
 import { CadastroPage } from '../pages/Cadastro/CadastroPage';
 import { LoginPage } from '../pages/Login/LoginPage';
@@ -26,7 +25,6 @@ export function Rotas() {
                     <Route path='contato' element={<ContatoPage/>}/>
                     <Route path='login' element={<LoginPage/>}/>
                     <Route path='cadastro' element={<CadastroPage/>}/>
-                    <Route path='finalizar' element={<FinalizarPedido/>}/>
                     <Route path='termos-de-uso' element={<TermosDeUsoPage/>}/>
                     
                 <Route path='*' element={<NotFoundPage/>}/>
