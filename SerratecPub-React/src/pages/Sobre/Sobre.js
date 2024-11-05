@@ -7,6 +7,7 @@ export const FotoMembro = styled.div`
   gap: 40px;
   padding: 40px;
   margin-left: 10%;
+  
     @media (max-width: 800px) {
     grid-template-columns: 
     margin-left: 0; 
@@ -18,6 +19,7 @@ export const Membro = styled.div`
   align-items: center;
   gap: 20px;
   text-align: left;
+
   @media (max-width: 600px) {
     gap: 10px; 
   }
@@ -29,10 +31,12 @@ export const ImagemMembro = styled.img`
   object-fit: cover;
   border-radius: 50%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
   &:hover{
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
+
   @media (max-width: 800px) {
     width: 100px;
     height: 100px;
@@ -46,8 +50,9 @@ export const Descricao = styled.div`
   font-size: larger;
   font-family: Arvo, serif;
   font-weight: bold;
+
   @media (max-width: 600px) {
-    font-size: 0.9rem; /* Reduz o tamanho da fonte em telas menores */
+    font-size: 0.9rem;
   }
 `;
 
@@ -62,6 +67,6 @@ export const GithubIcon  = styled(FontAwesomeIcon) `
         color: #000;
     }
     @media (max-width: 600px) {
-        font-size: 1.2em; /* Reduz o tamanho do ícone em telas menores */
+        font-size: 1.2em;
   }
 `;
