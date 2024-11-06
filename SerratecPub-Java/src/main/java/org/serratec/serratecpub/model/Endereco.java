@@ -14,8 +14,8 @@ public class Endereco {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
-	@Size(min = 8, max = 9, message = "CEP deve conter apenas 8 digitos")
+//	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
+//	@Size(min = 8, max = 9, message = "CEP deve conter apenas 8 digitos")
 	private String cep;
 	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
 	@Size(min = 3, max = 50, message = TratamentoDeErro.SizeMessage)
@@ -26,10 +26,10 @@ public class Endereco {
 	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
 	@Size(min = 1, max = 50, message = TratamentoDeErro.SizeMessage)
 	private String cidade;
-	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
-	@Size(min = 1, max = 10, message = TratamentoDeErro.SizeMessage)
+//	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
+//	@Size(min = 1, max = 10, message = TratamentoDeErro.SizeMessage)
 	private String numero;	
-	@Size(max = 50, message = TratamentoDeErro.SizeMessage)
+//	@Size(max = 50, message = TratamentoDeErro.SizeMessage)
 	private String complemento;
 	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
 	@Size(min = 2, max = 2,message = TratamentoDeErro.SizeMessage)
