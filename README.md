@@ -88,11 +88,11 @@ Contém funções de validação que são utilizadas para garantir que os dados 
 6. Acesse a aplicação em [http://localhost:8080](http://localhost:3000) (ou o número da porta do banco de dados da sua máquina).
 
 ## Autores ✨
-- [Gustavo Santos] (https://github.com/Gustavo-c-s)
-- [Isabella Oliveira] (https://github.com/isb-op)
-- [Lucas Gomes] (https://github.com/lucauxs)
-- [Murilo Bongard] (https://github.com/murilobongard)
-- [Renata Rodrigues] (http://github.com/itsrerodrigs)
-- [Thiago Branco] (https://github.com/thiagobranconf/)
+- [Gustavo Santos](https://github.com/Gustavo-c-s)
+- [Isabella Oliveira](https://github.com/isb-op)
+- [Lucas Gomes](https://github.com/lucauxs)
+- [Murilo Bongard](https://github.com/murilobongard)
+- [Renata Rodrigues](http://github.com/itsrerodrigs)
+- [Thiago Branco](https://github.com/thiagobranconf/)
 
 Este projeto é fruto do trabalho colaborativo e visa melhorar a experiência de compra online, utilizando práticas modernas de desenvolvimento web e design responsivo.
