@@ -3,7 +3,9 @@ import { InputDate, InputNumb, InputSenha, InputText } from "../../components/In
 import { api } from "../../services/api";
 import styles from "./CadastroPage.module.css";
 import { useNavigate } from "react-router-dom";
-import { validarCadastro } from "../../utils/validations";
+import { handleMask } from "../../utils/validations";
+import { validarEntradas } from "../../utils/validations";
+import { formatarBanco } from "../../utils/validations";
 
 export function CadastroPage() {
     
@@ -27,36 +29,46 @@ export function CadastroPage() {
 
     const handleCadastrar = () => {
         const novoCadastro = {
-            nome,
-            cpf,
-            dataNascimento,
-            email,
-            telefone,
-            endereco:{ cep, numero, complemento },
-            senha,  
+                nome: nome,
+                email: email,
+                cpf: cpf,
+                telefone: telefone,
+                dataNascimento: dataNascimento,
+                endereco: {
+                    cep: cep,
+                    numero: numero,
+                    complemento: complemento
+                },
+                senha: senha,
+            };
+            console.log(novoCadastro);
+            const errorMessage = validarEntradas(novoCadastro);
+            if (errorMessage) {
+                alert(errorMessage);
+                return;
+            }
+            const formatarInfos = formatarBanco(novoCadastro);
+            if (formatarInfos) {
+                postCliente(novoCadastro);
+                return;
+            }
+
         };
-        const errorMessage = validarCadastro(novoCadastro);
-        if (errorMessage) {
-            alert(errorMessage);
-            return;
-        }
-        postCliente(novoCadastro);
-    };
-
+        
     const postCliente = async (cliente) => {
-        const auth = btoa("Gustavo:teste"); 
-
         try {
-            await api.post('/clientes/cadastrar', cliente, {
+            await api.post('/clientes', cliente,{
             headers: {
-                'Authorization': `Basic ${auth}`,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
             },
             withCredentials: true
             });
+            
             alert('Usuário cadastrado com sucesso');
             setCadastroList([...cadastroList, cliente]);
-        } catch (error) {
+        }
+        catch (error) {
             alert("Erro no cadastro: " + error.message);
         }
     };
@@ -70,7 +82,7 @@ export function CadastroPage() {
                         texto="Nome:"
                         placeholder="Digite seu nome"
                         value={nome}
-                        onChange={setNome}
+                        onChange={(e)=>setNome(e.target.value)}
                     />
                     <InputNumb
                         className={styles.input}
@@ -78,13 +90,13 @@ export function CadastroPage() {
                         placeholder="Digite seu CPF"
                         mask="cpf"
                         value={cpf}
-                        onChange={setCpf}
+                        onChange={(e)=>handleMask(e, 'cpf', setCpf)}
                     />
                     <InputDate
                         className={styles.input}
                         texto="Data Nascimento: "
                         value={dataNascimento}
-                        onChange={setDataNascimento}
+                        onChange={(e)=>setDataNascimento(e.target.value)}
                     />
                     <InputText
                         className={styles.input}
@@ -92,58 +104,58 @@ export function CadastroPage() {
                         placeholder="Digite seu CEP"
                         mask=""
                         value={cep}
-                        onChange={setCep}
+                        onChange={(e)=>handleMask(e, 'cep', setCep)}
                     />
                     <InputNumb
                         className={styles.input}
-                        texto="Número: "
+                        texto="Número da residência: "
                         placeholder="Digite o número"
                         mask="numero"
                         value={numero}
-                        onChange={setNumero}
+                        onChange={(e)=>handleMask(e, 'numero', setNumero)}
                     />
                     <InputText
                         className={styles.input}
                         texto="Complemento: "
                         placeholder="Digite o complemento"
                         value={complemento}
-                        onChange={setComplemento}
+                        onChange={(e)=>setComplemento(e.target.value)}
                     />
                     <InputText
                         className={styles.input}
                         texto="Email: "
                         placeholder="Digite seu email"
                         value={email}
-                        onChange={setEmail}
+                        onChange={(e)=>setEmail(e.target.value)}
                     />
                     <InputNumb
                         className={styles.input}
                         texto="Telefone: "
-                        placeholder="+55"
+                        placeholder="(00)9 9999-9999"
                         mask="telefone"
                         value={telefone}
-                        onChange={setTelefone}
+                        onChange={(e)=>handleMask(e, 'telefone', setTelefone)}
                     />
                     <InputSenha
                         className={styles.input}
                         texto="Senha: "
                         placeholder={"Digite sua senha"}
                         value={senha}
-                        onChange={setSenha}
+                        onChange={(e)=>setSenha(e.target.value)}
                     />
                     <InputSenha
                         className={styles.input}
                         texto="Confirme sua senha: "
                         placeholder="Digite sua senha"
                         value={senhaConfirm}
-                        onChange={setSenhaConfirm}
+                        onChange={(e)=>setSenhaConfirm(e.target.value)}
                     />
                     <div className={styles.divTermos}>
                         <input type="checkbox"/>
                         <p>Li e aceito os</p>
                         <button onClick={handleNavigation} className={styles.buttonTermos}>termos de uso</button>
                     </div>
-                    <button className={styles.buttonCadastrar} type="submit">cadastrar-se</button>
+                    <button type="submit" className={styles.buttonCadastrar} >cadastrar-se</button>
                 </div>
             </form>
         </>

@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { CardProduto } from "../../components/Card/CardProduto";
 import style from './Produto.module.css';
 import { api } from "../../services/api";
+import { InputNumb } from "../../components/Input/Input";
 import { CardCarrinho } from "../../components/Card/CardCarrinho";
-import { InputNumero } from "../../components/Input/Input";
 import { Botao } from "../../components/Botao/Botao";
 import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
 import { carrinhoContext } from "../../components/context/carrinhoContext";
@@ -88,7 +88,7 @@ export function ProdutoPage() {
                                             valorUnitario={pro.valorUnitario?.toFixed(2)}
                                         />
                                         <div className={style.input}>
-                                            <InputNumero
+                                            <InputNumb
                                                 texto={"Quantidade: "}
                                                 placeholder={'Digite a quantidade...'}
                                                 mask='numero'

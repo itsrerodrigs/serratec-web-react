@@ -56,7 +56,7 @@ public class ClienteController {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
 	}
 
-	@PostMapping("/cadastrar")
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	@Operation(summary = "Retornar cliente pelo id", description = "Dado um determinado id, será retornado o cliente")
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Cliente cadastra!"),

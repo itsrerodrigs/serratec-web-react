@@ -1,4 +1,4 @@
-input {
+.input {
     display: block;
     flex-direction: column;
     text-transform: uppercase;

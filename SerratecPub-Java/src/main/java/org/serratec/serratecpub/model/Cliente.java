@@ -25,7 +25,7 @@ public class Cliente {
 	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
 	private String nome;
 	
-	@Email
+//	@Email
 	@NotBlank(message = TratamentoDeErro.NotBlankMessage)
 	@Size(min = 5, max = 100)
 	private String email;
@@ -35,7 +35,7 @@ public class Cliente {
 	private String cpf;
 	
 	@NotBlank(message = TratamentoDeErro.NotBlankMessage) 
-	@Size(min=11,max=11, message="Telefone deve conter entre 10 e 11 digitos")
+//	@Size(min=11,max=11, message="Telefone deve conter entre 10 e 11 digitos")
 	private String telefone;
 	
 	@PastOrPresent(message = "A data de nascimento deve ser informada no passado ou presente no formato AAAA-MM-DD")
@@ -44,6 +44,7 @@ public class Cliente {
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private Endereco endereco;
+	
 	private String senha;
 	
 	public String getSenha() {
