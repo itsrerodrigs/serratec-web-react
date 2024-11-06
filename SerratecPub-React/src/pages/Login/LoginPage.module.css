@@ -1,24 +1,35 @@
-.loginWrapper{
+.loginWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 45vh;
   margin: calc(50vh - 200px) auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  max-width: 50vh;
   text-transform: uppercase;
   font-family: Arvo, serif;
   font-weight: bold;
-  background-color: rgba(240, 248, 255, 0.836);
+  background-color: #252020;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  width: 43vh;
+  color: white;
 }
-.corpo{
-  background-image: url('https://images-ext-1.discordapp.net/external/yYhAoiUOzzaARKAJajUmzoSjem_zHAmEFx_a9QVzXwI/https/i.imgur.com/fvDcFdA.jpg?format=webp&width=900&height=623');
+.corpo {
+  background-image: url("https://imgur.com/DBqTkCG.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  background-repeat:no-repeat ;
-  background-size:cover ;
-  
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.h2 {
+  padding: 5px;
+  font-size: 2vh;
+  color: #ffffff;
+}
+
 h2 {
   font-size: 5vh;
   text-align: center;
@@ -40,6 +51,7 @@ input {
   border-radius: 5px;
   box-sizing: border-box;
   text-transform: none;
+  outline: none;
 }
 
 .buttonEntrar {
@@ -59,8 +71,7 @@ input {
   transition: background-color 0.3s ease-in-out;
 }
 
-.divCadastro{
-  
+.divCadastro {
   margin-top: 3vh;
   display: flex;
   flex-direction: row;
@@ -68,7 +79,7 @@ input {
   justify-content: right;
   font-size: 1.5vh;
 }
-.divCadastro .buttonCadastro{
+.divCadastro .buttonCadastro {
   font-size: 1.7vh;
   text-transform: uppercase;
   font-family: Arvo, serif;
@@ -79,14 +90,15 @@ input {
   border: none;
   background: none;
   border-radius: 5px;
+  color: #dfa32e;
 }
-.divCadastro .buttonCadastro:hover{
+.divCadastro .buttonCadastro:hover {
   color: #dfa32e;
   transition: color 0.3s ease-in-out;
 }
 
 .divCadastro .buttonCadastro::after {
-  content: '';
+  content: "";
   width: 0;
   height: 2px;
   display: block;

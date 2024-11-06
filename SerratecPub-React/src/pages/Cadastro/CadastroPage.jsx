@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { InputDate, InputNumb, InputSenha, InputText } from "../../components/Input/Input";
+import {
+  InputDate,
+  InputNumb,
+  InputSenha,
+  InputText,
+} from "../../components/Input/Input";
 import { api } from "../../services/api";
 import styles from "./CadastroPage.module.css";
 import { useNavigate } from "react-router-dom";
