@@ -52,6 +52,7 @@ export function CadastroPage() {
                 postCliente(novoCadastro);
                 return;
             }
+
         };
         
     const postCliente = async (cliente) => {
@@ -73,14 +74,7 @@ export function CadastroPage() {
     };
     return (
         <>
-            <form className={styles.cadastroWrapper} onSubmit={(e) => {
-                e.preventDefault();
-                if (confirmarSenha()) {
-                    handleCadastrar();
-                } else {
-                    alert("As senhas devem ser iguais!");
-                }
-            }}>
+            <form className={styles.cadastroWrapper} onSubmit={handleCadastrar}>
                 <h2>cadastro</h2>
                 <div className={styles.divInput}>
                     <InputText
@@ -104,11 +98,11 @@ export function CadastroPage() {
                         value={dataNascimento}
                         onChange={(e)=>setDataNascimento(e.target.value)}
                     />
-                    <InputNumb
+                    <InputText
                         className={styles.input}
                         texto="CEP: "
                         placeholder="Digite seu CEP"
-                        mask="cep"
+                        mask=""
                         value={cep}
                         onChange={(e)=>handleMask(e, 'cep', setCep)}
                     />

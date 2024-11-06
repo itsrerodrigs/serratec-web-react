@@ -1,21 +1,37 @@
+import { useContext } from "react"
 import styles from "./Card.module.css"
+import { carrinhoContext } from "../context/carrinhoContext"
+import { FinalizarPedido } from "./FinalizarPedido"
 
-export function Carrinho({ nome, categoria, descricao, qntd, valor, handle }) {
+export function CardCarrinho() {
+    const { carrinhoItem, addItem, valototal, removerItem, removerUm, limparCarrinho } = useContext(carrinhoContext)
 
     return (
         <>
-            <div className={styles.corpo}>
-                <div className={styles.corpo2}>
-                    <h2>Nome: {nome}</h2>
-                    <p>Categoria: {categoria} <br /></p>
-                    <p>Descrição: {descricao} <br /></p>
-                    <p>Quantidade: {qntd} <br /></p>
-                    <p>Valor R${valor} <br /></p>
+            <p>{valototal}</p>
+            {carrinhoItem.map((car) => (
+                <div className={styles.corpocar}>
+                    <div className={styles.box}>
+                        <h2>{car.nome}</h2>
+                        <p>{car.descricao} <br /></p>
+                        <p>{car.quantidade} <br /></p>
+                        <p>R${(car.valorUnitario * car.quantidade).toFixed(2)} <br /></p>
+                    </div>
+                    <div className={styles.bnt}>
+                        <button onClick={() => removerUm(car.id)}>➖</button>
+                        <button onClick={() => removerItem(car.id)}>✖</button>
+                        <button onClick={() => addItem(car)}>➕</button>
+                    </div>
+
                 </div>
-                <button onClick={handle}>✖</button>
+            ))}
+            <div className={styles.corpocar}>
+
+            <FinalizarPedido
+                carrinho={carrinhoItem}
+                limparCarrinho={() => limparCarrinho()}
+                />
             </div>
-        
-    
         </>
     )
 }

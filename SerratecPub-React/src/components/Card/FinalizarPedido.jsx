@@ -19,7 +19,7 @@ export function FinalizarPedido({ carrinho, limparCarrinho }) {
             statusPedido: "EM_PRODUCAO",
             nomeCliente: usuario.nome,
             itemPedido: carrinho.map(item => ({
-                quantidade: item.qntd,
+                quantidade: item.quantidade,
                 percentualDesconto: 5,
                 idProduto: item.id,
             })),

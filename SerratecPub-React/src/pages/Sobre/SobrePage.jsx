@@ -1,4 +1,3 @@
-import styles from "./SobrePage.module.css";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import gustavoFt from "../../assets/images/gustavoFt.jpeg";
 import murilo from "../../assets/images/murilo.jpg";
@@ -7,9 +6,15 @@ import isabellaFt from "../../assets/images/isabellaFt.jpeg";
 import eduardaFt from "../../assets/images/eduardaFt.jpeg";
 import lucasFt from "../../assets/images/lucasFt.jpeg";
 import thiago from "../../assets/images/thiago.png";
-import { FotoMembro, Membro, Descricao, ImagemMembro, GithubIcon, Nome  } from './Sobre.js';
-// import Garcom from "../../assets/images/Garcom.jpg";
-
+import {
+  FotoMembro,
+  Membro,
+  Descricao,
+  ImagemMembro,
+  GithubIcon,
+  Nome,
+} from "./Sobre.js";
+import Garcom from "../../assets/images/Garcom.jpg";
 
 export function SobrePage() {
   return (
@@ -23,7 +28,9 @@ export function SobrePage() {
           <ImagemMembro src={gustavoFt} alt="Gustavo" />
         </a>
         <Descricao>
-          <Nome>Gustavo Santos</Nome><br/>Mestre do Café e das Noites em Claro
+          <Nome>Gustavo Santos</Nome>
+          <br />
+          Mestre do Café e das Noites em Claro
           <a
             href="https://github.com/Gustavo-c-s"
             target="_blank"
@@ -42,7 +49,9 @@ export function SobrePage() {
           <ImagemMembro src={murilo} alt="Murilo" />
         </a>
         <Descricao>
-          <Nome>Murilo Bongard</Nome><br/>Rei das Noites de Código e Happy Hours
+          <Nome>Murilo Bongard</Nome>
+          <br />
+          Rei das Noites de Código e Happy Hours
           <a
             href="https://github.com/murilobongard"
             target="_blank"
@@ -61,7 +70,9 @@ export function SobrePage() {
           <ImagemMembro src={lucasFt} alt="Lucas" />
         </a>
         <Descricao>
-          <Nome>Lucas Coco</Nome><br/>UX Designer e Degustador Oficial de Brejas
+          <Nome>Lucas Coco</Nome>
+          <br />
+          UX Designer e Degustador Oficial de Brejas
           <a
             href="https://github.com/lucauxs"
             target="_blank"
@@ -80,7 +91,9 @@ export function SobrePage() {
           <ImagemMembro src={eduardaFt} alt="Eduarda" />
         </a>
         <Descricao>
-          <Nome>Eduarda Goulart</Nome><br/>Especialista em DevOps e Rodadas de Chopp
+          <Nome>Eduarda Goulart</Nome>
+          <br />
+          Especialista em DevOps e Rodadas de Chopp
           <a
             href="https://github.com/Eduarda-goular"
             target="_blank"
@@ -99,7 +112,9 @@ export function SobrePage() {
           <ImagemMembro src={isabellaFt} alt="Isabella" />
         </a>
         <Descricao>
-          <Nome>Isabella Pinheiro</Nome><br/>Caçadora de Bugs e Entusiasta dos Drinks Exóticos
+          <Nome>Isabella Pinheiro</Nome>
+          <br />
+          Caçadora de Bugs e Entusiasta dos Drinks Exóticos
           <a
             href="https://github.com/isb-op"
             target="_blank"
@@ -115,10 +130,12 @@ export function SobrePage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ImagemMembro src={renataFt} alt="Renata"/>
+          <ImagemMembro src={renataFt} alt="Renata" />
         </a>
         <Descricao>
-          <Nome>Renata Rodrigues</Nome><br/>Fullstack das Linhas de Código e da Caipirinha
+          <Nome>Renata Rodrigues</Nome>
+          <br />
+          Fullstack das Linhas de Código e da Caipirinha
           <a
             href="https://github.com/itsrerodrigs"
             target="_blank"
@@ -137,7 +154,9 @@ export function SobrePage() {
           <ImagemMembro src={thiago} alt="Thiago" />
         </a>
         <Descricao>
-          <Nome>Thiago Branco</Nome><br/>Project Manager e Sommelier de Cervejas Artesanais
+          <Nome>Thiago Branco</Nome>
+          <br />
+          Project Manager e Sommelier de Cervejas Artesanais
           <a
             href="https://github.com/thiagobranconf"
             target="_blank"
@@ -145,6 +164,14 @@ export function SobrePage() {
           >
             <GithubIcon icon={faGithub} />
           </a>
+        </Descricao>
+      </Membro>
+      <Membro>
+        <ImagemMembro src={Garcom} alt="Garcom" />
+        <Descricao>
+          <Nome>Clerinton Savio</Nome>
+          <br />
+          Eu entrego e me humilho pra receber dinheiro de gorjeta
         </Descricao>
       </Membro>
     </FotoMembro>

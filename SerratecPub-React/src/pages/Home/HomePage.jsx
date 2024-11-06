@@ -7,7 +7,7 @@ import imgBar3 from '../../assets/images/home-bar44.png';
 
 
 export function HomePage() {
-     return(
+        return(
         <>
             <main>
                 <section className={styles.container_a}>
