@@ -9,7 +9,32 @@ import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
 import { carrinhoContext } from "../../components/context/carrinhoContext";
 
 export function ProdutoPage() {
-    const [produtoList, setProdutoList] = useState([]);
+    const [produtoList, setProdutoList] = useState([
+        {
+            id: 30,
+            nome: 'cerveja',
+            categoria: 'Bebida',
+            descricao: 'produto.descricao',
+            qntd: 2,
+            valorBruto: 3.5
+        },
+        {
+            id: 40,
+            nome: 'cerveja',
+            categoria: 'Bebida',
+            descricao: 'descricao',
+            qntd: 2,
+            valorBruto: 3.5
+        },
+        {
+            id: 60,
+            nome: 'cerveja',
+            categoria: 'Bebida',
+            descricao: 'descricao',
+            qntd: 2,
+            valorBruto: 3.5
+        },
+    ]);
     const [qntd, setQntd] = useState({});
     const { addItem,carrinhoItem } = useContext(carrinhoContext);
 
