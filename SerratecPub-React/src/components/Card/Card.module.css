@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 10px;
-    
+    align-items: center;
     
 }
 
@@ -12,4 +12,26 @@
     flex-direction: column;
     margin: 10px;
     
+}
+.corpocar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    align-items: center;
+}
+.box{
+    border-radius: 10px;
+    background-color: rgba(22, 24, 23, 0.397);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-items: center;
+    width: 70vh;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    line-height: 2;
+}
+.bnt{
+    display: flex;
+    gap: 15px;
 }

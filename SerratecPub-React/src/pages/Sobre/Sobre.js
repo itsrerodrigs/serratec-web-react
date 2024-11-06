@@ -9,7 +9,7 @@ export const FotoMembro = styled.div`
   margin-left: 10%;
   
     @media (max-width: 800px) {
-    grid-template-columns: 
+    grid-template-columns: repeat(1, 1fr);
     margin-left: 0; 
     padding: 20px; 
   }

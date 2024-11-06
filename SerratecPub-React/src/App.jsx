@@ -2,7 +2,8 @@ import React from "react";
 import { Rotas } from "./routes/AppRoutes";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
-import { AuthProvider } from "./components/context/authService";
+import { CarrinhoProvider } from "./components/context/carrinhoContext";
+
 
 
 
@@ -10,9 +11,9 @@ function App() {
   return (
     <>
       <Header />
-      <AuthProvider>
+      <CarrinhoProvider>
         <Rotas />
-      </AuthProvider>
+      </CarrinhoProvider>
       <Footer />
     </>
   );

@@ -1,64 +1,63 @@
-import { useContext, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './LoginPage.module.css';
-import { Navigate, useNavigate } from 'react-router-dom';
-import { InputSenha, InputText } from '../../components/Input/Input';
+import { useNavigate } from 'react-router-dom';
+import { InputEmail, InputSenha } from '../../components/Input/Input';
 import { api } from '../../services/api';
-import { AuthContext } from '../../components/context/authService';
+
 
 
 export function LoginPage() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const [cliente,setCliente] =useState([]);
-    const {signIn,signed}= useContext(AuthContext);
+    const [cliente, setCliente] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     const navigate = useNavigate();
     const enviar = (event) => {
         event.preventDefault();
         getCliente()
-        
+
     };
-    
-    // const handleSignIn = async(e)=>{
-    //     e.preventDefault();
-    //     const data = {
-    //         email,senha,
-    //     };
-    //     await signIn(data);
-    // };
-    if(signed){
-        return<Navigate to='/home'/>
-    }
+    useEffect(() => {
+        const usuario = localStorage.getItem('@Auth:user');
+        if (usuario) {
+          setCliente(JSON.parse(usuario))  
+          navigate('/'); 
+        }
+        setLoading(false);
+      }, [navigate]);
+
     const getCliente = async () => {
         try {
-            api.get(`/clientes/login/${email}/${senha }`)
-            .then((response) => {
-                localStorage.setItem ("@Auth:user", JSON.stringify(response.data));
-                setCliente(JSON.stringify(response.data));
-                alert((cliente.nome));
-                setEmail('');
-                setSenha('');
-                handleOcultar;
-            });
+            api.get(`/clientes/login/${email}/${senha}`)
+                .then((response) => {
+                    if (response.data) {
+                        localStorage.setItem("@Auth:user", JSON.stringify(response.data));
+                        setCliente(JSON.stringify(response.data));
+                        alert(`BEM VINDO ${response.data.nome}`);
+                        navigate('/produto');
+                        setEmail('');
+                        setSenha('');
+                    } else {
+                        alert('Erro ao fazer Login', response.error)
+                    }
+                });
         } catch (error) {
-            console.error("Erro ao buscar produto:", error); 
+            console.error("erro no login:", error);
         }
-    }; 
-    const handleOcultar = () => {
-        let login = document.getElementById("logi");
-        if (login.style.display == 'none') {
-            login.style.display = 'flex';
-        } else {
-            login.style.display = "none"
-        }
-    }
+    };
+
     const handleNavigation = () => navigate('/cadastro');
+    if(loading){
+        return<div>Carregando....</div>
+    }
     return (<>
         <div className={styles.corpo}>
 
             <div id='logi' className={styles.loginWrapper}>
                 <h2>Login</h2>
                 <form onSubmit={enviar}>
-                    <InputText
+                    <InputEmail
                         className={styles.input}
                         texto="Email: "
                         placeholder="Digite seu email"

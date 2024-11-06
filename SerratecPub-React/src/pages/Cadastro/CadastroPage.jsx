@@ -32,7 +32,8 @@ export function CadastroPage() {
             dataNascimento,
             email,
             telefone,
-            endereco:{ cep, numero, complemento },  
+            endereco:{ cep, numero, complemento },
+            senha,  
         };
         const errorMessage = validarCadastro(novoCadastro);
         if (errorMessage) {
@@ -61,14 +62,7 @@ export function CadastroPage() {
     };
     return (
         <>
-            <form className={styles.cadastroWrapper} onSubmit={(e) => {
-                e.preventDefault();
-                if (confirmarSenha()) {
-                    handleCadastrar();
-                } else {
-                    alert("As senhas devem ser iguais!");
-                }
-            }}>
+            <form className={styles.cadastroWrapper} onSubmit={handleCadastrar}>
                 <h2>cadastro</h2>
                 <div className={styles.divInput}>
                     <InputText
@@ -92,11 +86,11 @@ export function CadastroPage() {
                         value={dataNascimento}
                         onChange={setDataNascimento}
                     />
-                    <InputNumb
+                    <InputText
                         className={styles.input}
                         texto="CEP: "
                         placeholder="Digite seu CEP"
-                        mask="cep"
+                        mask=""
                         value={cep}
                         onChange={setCep}
                     />

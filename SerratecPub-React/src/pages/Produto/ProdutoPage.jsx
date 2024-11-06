@@ -1,119 +1,60 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CardProduto } from "../../components/Card/CardProduto";
 import style from './Produto.module.css';
 import { api } from "../../services/api";
-import { Carrinho } from "../../components/Card/CardCarrinho";
+import { CardCarrinho } from "../../components/Card/CardCarrinho";
 import { InputNumero } from "../../components/Input/Input";
 import { Botao } from "../../components/Botao/Botao";
 import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
-
+import { carrinhoContext } from "../../components/context/carrinhoContext";
 
 export function ProdutoPage() {
-    const [produtoList, setProdutoList] = useState([
-        {
-            id: 30,
-            nome: 'cerveja',
-            categoria: 'Bebida',
-            descricao: 'produto.descricao',
-            qntd: 2,
-            valorBruto: 3.5
-        },
-        {
-            id: 40,
-            nome: 'cerveja',
-            categoria: 'Bebida',
-            descricao: 'descricao',
-            qntd: 2,
-            valorBruto: 3.5
-        },
-        {
-            id: 60,
-            nome: 'cerveja',
-            categoria: 'Bebida',
-            descricao: 'descricao',
-            qntd: 2,
-            valorBruto: 3.5
-        },
-    ]);
-    const [carrinho, setCarrinho] = useState([]);
-    const [qntd, setQntd] = useState(0);
-    const [contator, setContator] = useState(0);
-    const [valorTotal,setValorTotal]=useState(0)
-    const handleAddCarin = (produto) => {
-        const quantidade = qntd[produto.id] || 0;
-        const valorBruto = (produto.valorUnitario * 2) * quantidade;
-        const addCarrinho = {
-            id: produto.id,
-            nome: produto.nome,
-            categoria: produto.categoria,
-            descricao: produto.descricao,
-            qntd: quantidade,
-            valorBruto: valorBruto
-        };
-        setValorTotal( carrinho.reduce((acc, item) => acc + item.valorBruto, 0)),
-        console.log()
-        setCarrinho([...carrinho, addCarrinho]);
-        setContator(contator + 1);
-    }
-    const handleVerificarCar = (produto) => {
-        const produtoExistente = carrinho.find(item => item.id === produto.id);
-        ; if (produtoExistente) {
-            const novoCarrinho = carrinho.map(item =>
-                item.id === produto.id ? { ...item, qntd: parseInt(qntd[produto.id] || 0, 10) } : item);
-            setCarrinho(novoCarrinho);
-        } else {
-            handleAddCarin(produto);
-        }
-    }
-    const handleRemover = (id) => {
-        setCarrinho(carrinho.filter(produto => produto.id !== id));
-        setContator(contator - 1);
-    };
+    const [produtoList, setProdutoList] = useState([]);
+    const [qntd, setQntd] = useState({});
+    const { addItem,carrinhoItem } = useContext(carrinhoContext);
+
+    // Função para alterar quantidade de um produto específico
     const handleQuantidadeChange = (produtoId, value) => {
-        setQntd({ [produtoId]: value });
+        setQntd(prevQntd => ({ ...prevQntd, [produtoId]: parseInt(value) || 1 }));
     };
-    const handleOcultar = () => {
-        let iconCar = document.getElementById("icon");
-        if (iconCar.style.display == 'none') {
-            iconCar.style.display = 'flex';
-        } else {
-            iconCar.style.display = "none"
-        }
-    }
-    const limparCarrinho = () => {
-        setCarrinho([]);
-        setContator(0);
+
+    // Função para adicionar produto ao carrinho usando contexto
+    const handleAddProduto = (produto) => {
+        const quantidade = qntd[produto.id] || 1; // Usa a quantidade do input ou 1
+        addItem({ ...produto, quantidade });
+        setQntd(qntd[produto.id] || 1);
     };
+
+
+    
+
+
     useEffect(() => {
-        getProduto()
+        getProduto();
     }, []);
-    useEffect(() => {
-        const total = carrinho.reduce((acc, item) => acc + item.valorBruto, 0);
-        setValorTotal(total.toFixed(2)); 
-    }, [carrinho]);
+
     const getProduto = async () => {
         try {
-            api.get('/produtos'
-            ).then((response) => {
-                console.log((response.data));
-                setProdutoList(response.data);
-            });
+            const response = await api.get('/produtos');
+            setProdutoList(response.data);
         } catch (error) {
             console.error("Erro ao buscar produto:", error);
         }
     };
+
     const categories = [...new Set(produtoList.map(produto => produto.categoria))];
+
     return (
         <>
             <h1>PRODUTOS</h1>
-            <p className={style.iconCar} onClick={handleOcultar}>🛒{contator}</p>
+            
             <div className={style.corpo}>
-                <div className={style.boxproduto} >
+                <div className={style.boxproduto}>
                     {categories.map(categoria => (
-                        <div  key={categoria}>
+                        <div key={categoria}>
                             <h2>{categoria}</h2>
                             <div className={style.boxbebida}>
-                                {produtoList.filter(produto => produto.categoria === categoria).map((pro) =>
+                                {produtoList.filter(produto => produto.categoria === categoria).map((pro) => (
                                     <div className={style.box} key={pro.id}>
                                         <CardProduto
                                             key={pro.id}
@@ -126,44 +67,44 @@ export function ProdutoPage() {
                                                 texto={"Quantidade: "}
                                                 placeholder={'Digite a quantidade...'}
                                                 mask='numero'
-                                                value={qntd[pro.id] || ''}
+                                                value={qntd[pro.id] || 1}
                                                 onChange={(e) => handleQuantidadeChange(pro.id, e.target.value)}
                                             />
                                             <Botao
-                                                handleClick={() => handleVerificarCar(pro)}
+                                                handleClick={() => handleAddProduto(pro)}
                                                 texto={'➕'}
                                             />
                                         </div>
-
                                     </div>
-                                )}
+                                ))}
                             </div>
                         </div>
                     ))}
                 </div>
-                <div id="icon" className={style.conteinerCarrinho}>
+
+                {/* <div id="icon" className={style.conteinerCarrinho}>
                     <p className={style.fechar} onClick={handleOcultar}>X</p>
-                    {carrinho.map((car) =>
+                    {carrinhoItem.map((car) => (
                         <div className={style.carrinho} key={car.id}>
-                            <Carrinho
+                            <CardCarrinho
                                 nome={car.nome}
                                 categoria={car.categoria}
                                 descricao={car.descricao}
-                                qntd={car.qntd}
-                                valor={car.valorBruto?.toFixed(2)}
-                                handle={() => handleRemover(car.id)}
+                                qntd={car.quantidade}
+                                valor={(car.valorUnitario * car.quantidade).toFixed(2)}
+                                handle={() => removerItem(car.id)}
+                                handleadd={() => handleAddProduto(car)}
                             />
+                           
                         </div>
-                    )}
-                    <p>Valor Total: R${valorTotal}</p>
+                    ))}
+                    <p>Valor Total: R${valorTotal.toFixed(2)}</p>
                     <FinalizarPedido
-                        carrinho={carrinho}
-                        limparCarrinho={()=>limparCarrinho()}
+                        carrinho={carrinhoItem}
+                        limparCarrinho={limparCarrinho}
                     />
-                </div>
-
+                </div> */}
             </div>
-
         </>
     );
 }
