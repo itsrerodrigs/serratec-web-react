@@ -34,7 +34,7 @@ export function ProdutoPage() {
         },
     ]);
     const [qntd, setQntd] = useState({});
-    const { addItem } = useContext(carrinhoContext);
+    const { addItem,carrinhoItem } = useContext(carrinhoContext);
 
     // Função para alterar quantidade de um produto específico
     const handleQuantidadeChange = (produtoId, value) => {
@@ -50,6 +50,7 @@ export function ProdutoPage() {
     useEffect(() => {
         getProduto();
     }, []);
+
     const getProduto = async () => {
         try {
             const response = await api.get('/produtos');
@@ -58,11 +59,13 @@ export function ProdutoPage() {
             console.error("Erro ao buscar produto:", error);
         }
     };
+
     const categories = [...new Set(produtoList.map(produto => produto.categoria))];
 
     return (
         <>
             <h1 className={style.h1}>PRODUTOS</h1>
+            
             <div className={style.corpo}>
                 <div className={style.boxproduto}>
                     {categories.map(categoria => (
@@ -97,6 +100,7 @@ export function ProdutoPage() {
                         </div>
                     ))}
                 </div>
+
             </div>
         </>
     );
