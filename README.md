@@ -61,7 +61,7 @@ Contém funções de validação que são utilizadas para garantir que os dados 
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/serratecpub-react.git
+   git clone https://github.com/thiagobranconf/Front-SerratecPub.git
    ```
 
 2. Navegue até a pasta do projeto:
