@@ -3,9 +3,7 @@ import { CardProduto } from "../../components/Card/CardProduto";
 import style from './Produto.module.css';
 import { api } from "../../services/api";
 import { InputNumb } from "../../components/Input/Input";
-import { CardCarrinho } from "../../components/Card/CardCarrinho";
 import { Botao } from "../../components/Botao/Botao";
-import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
 import { carrinhoContext } from "../../components/context/carrinhoContext";
 
 export function ProdutoPage() {
@@ -36,7 +34,7 @@ export function ProdutoPage() {
         },
     ]);
     const [qntd, setQntd] = useState({});
-    const { addItem,carrinhoItem } = useContext(carrinhoContext);
+    const { addItem } = useContext(carrinhoContext);
 
     // Função para alterar quantidade de um produto específico
     const handleQuantidadeChange = (produtoId, value) => {
@@ -49,15 +47,9 @@ export function ProdutoPage() {
         addItem({ ...produto, quantidade });
         setQntd(qntd[produto.id] || 1);
     };
-
-
-    
-
-
     useEffect(() => {
         getProduto();
     }, []);
-
     const getProduto = async () => {
         try {
             const response = await api.get('/produtos');
@@ -66,13 +58,11 @@ export function ProdutoPage() {
             console.error("Erro ao buscar produto:", error);
         }
     };
-
     const categories = [...new Set(produtoList.map(produto => produto.categoria))];
 
     return (
         <>
             <h1 className={style.h1}>PRODUTOS</h1>
-            
             <div className={style.corpo}>
                 <div className={style.boxproduto}>
                     {categories.map(categoria => (
@@ -106,29 +96,6 @@ export function ProdutoPage() {
                         </div>
                     ))}
                 </div>
-
-                {/* <div id="icon" className={style.conteinerCarrinho}>
-                    <p className={style.fechar} onClick={handleOcultar}>X</p>
-                    {carrinhoItem.map((car) => (
-                        <div className={style.carrinho} key={car.id}>
-                            <CardCarrinho
-                                nome={car.nome}
-                                categoria={car.categoria}
-                                descricao={car.descricao}
-                                qntd={car.quantidade}
-                                valor={(car.valorUnitario * car.quantidade).toFixed(2)}
-                                handle={() => removerItem(car.id)}
-                                handleadd={() => handleAddProduto(car)}
-                            />
-                           
-                        </div>
-                    ))}
-                    <p>Valor Total: R${valorTotal.toFixed(2)}</p>
-                    <FinalizarPedido
-                        carrinho={carrinhoItem}
-                        limparCarrinho={limparCarrinho}
-                    />
-                </div> */}
             </div>
         </>
     );

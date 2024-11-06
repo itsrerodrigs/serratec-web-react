@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.serratec.serratecpub.util.TratamentoDeErro;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CascadeType;
@@ -149,8 +151,8 @@ public class Pedido {
 				+"\n\nNumero do Pedido: " + id
                 + " | Data do Pedido: " + dataPedido 
                 + "\nStatus do Pedido: " + statusPedido
-               // + "\n\nCliente: " + cliente.getNome() 
-                //+ "\nCPF: " + TratamentoDeErro.formataCpf(cliente.getCpf())
+                + "\n\nCliente: " + cliente.getNome() 
+                + "\nCPF: " + TratamentoDeErro.formataCpf(cliente.getCpf())
                 + "\n\nItens do Pedido: " + itemPedido.toString()
                 + "\n\nValor Total do Pedido: R$" + df.format(valorTotal);
     }

@@ -9,7 +9,7 @@ import { CadastroPage } from '../pages/Cadastro/CadastroPage';
 import { LoginPage } from '../pages/Login/LoginPage';
 import { TermosDeUsoPage } from '../pages/TermosDeUso/TermosDeUsoPage';
 import { ProdutoPage } from '../pages/Produto/ProdutoPage';
-import { CardCarrinho } from '../components/Card/CardCarrinho';
+import { CarrinhoPage } from '../pages/Carrinho/CarrinhoPage';
 
 
 
@@ -28,7 +28,7 @@ export function Rotas() {
                 <Route path='login' element={<LoginPage />} />
                 <Route path='cadastro' element={<CadastroPage />} />
                 <Route path='termos-de-uso' element={<TermosDeUsoPage />} />
-                <Route path='carrinho' element={<CardCarrinho />} />
+                <Route path='carrinho' element={<CarrinhoPage />} />
                 <Route path='*' element={<NotFoundPage />} />
             </Routes>
         </>

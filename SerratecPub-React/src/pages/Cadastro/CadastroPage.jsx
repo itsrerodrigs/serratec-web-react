@@ -8,7 +8,6 @@ import { validarEntradas } from "../../utils/validations";
 import { formatarBanco } from "../../utils/validations";
 
 export function CadastroPage() {
-    
     const [cadastroList, setCadastroList] = useState([])
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
@@ -21,13 +20,12 @@ export function CadastroPage() {
     const [senha, setSenha] = useState('')
     const [senhaConfirm, setSenhaConfirm] = useState('');
 
-    const confirmarSenha = () => {
-        return senha === senhaConfirm;
-    }
     const navigate = useNavigate();
     const handleNavigation = () => navigate('/termos-de-uso');
+    const handleNavigationCadastro = () => navigate('/');
 
-    const handleCadastrar = () => {
+    const handleCadastrar = (e) => {
+        e.preventDefault();
         const novoCadastro = {
                 nome: nome,
                 email: email,
@@ -52,7 +50,6 @@ export function CadastroPage() {
                 postCliente(novoCadastro);
                 return;
             }
-
         };
         
     const postCliente = async (cliente) => {
@@ -64,9 +61,9 @@ export function CadastroPage() {
             },
             withCredentials: true
             });
-            
             alert('Usuário cadastrado com sucesso');
             setCadastroList([...cadastroList, cliente]);
+            handleNavigationCadastro();
         }
         catch (error) {
             alert("Erro no cadastro: " + error.message);
