@@ -5,7 +5,6 @@ import imgBar1 from '../../assets/images/home-bar222.png';
 import imgBar2 from '../../assets/images/home-bar3333.png';
 import imgBar3 from '../../assets/images/home-bar44.png';
 
-
 export function HomePage() {
         return(
         <>

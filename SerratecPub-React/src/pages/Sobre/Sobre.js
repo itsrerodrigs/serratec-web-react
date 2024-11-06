@@ -17,7 +17,6 @@ export const FotoMembro = styled.div`
     margin-bottom: 15px;
   }
 `;
-
 export const Membro = styled.div`
   display: flex;
   align-items: center;
