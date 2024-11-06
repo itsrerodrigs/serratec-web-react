@@ -6,20 +6,20 @@ import "./Header.css";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [usuario, setUsuario] = useState(null);
-  
+
   const navigate = useNavigate();
-  
+
   useEffect(() => {
-    const pegaUser = localStorage.getItem('@Auth:user');
+    const pegaUser = localStorage.getItem("@Auth:user");
     if (pegaUser) {
       setUsuario(JSON.parse(pegaUser));
     }
-  }, [])
+  }, []);
   const handleLogout = () => {
-    localStorage.removeItem('@Auth:user');
+    localStorage.removeItem("@Auth:user");
     setUsuario(null);
-    navigate('/login');
-  }
+    navigate("/login");
+  };
 
   const handleNavigation = (path) => navigate(path);
   const handleHomeNavigation = () => handleNavigation("/");
@@ -65,19 +65,23 @@ export function Header() {
           </li>
           {usuario && (
             <li>
-              <button onClick={handleLogout}>
+              <button
+                className="link p-3 transition-all cursor-pointer"
+                onClick={handleLogout}
+              >
                 Sair
               </button>
             </li>
           )}
-          <li onClick={handleCarNavigation} >
+          <li
+            onClick={handleCarNavigation}
+            className="link p-3 transition-all cursor-pointer"
+          >
             🛒Carrinho
           </li>
         </ul>
 
-        {usuario &&(<p>
-            {usuario.nome}
-          </p>)}
+        {usuario && <p>{usuario.nome}</p>}
         <div className="relative hidden md:flex items-center justify-center gap-3 hover:bg-amber-500 hover:rounded-full h-8 w-8">
           <i
             className="bx bxs-user cursor-pointer text-2xl"
@@ -102,8 +106,10 @@ export function Header() {
             className="bx bxs-user list-none w-full text-center p-4 hover:bg-amber-500 hover:text-white transition-all cursor-pointer text-2xl"
             onClick={handleLoginNavigation}
           ></i>
-          <li onClick={handleCarNavigation} className="list-none w-full text-center p-4 hover:bg-amber-500 hover:text-white transition-all cursor-pointer text-2xl"
-           >
+          <li
+            onClick={handleCarNavigation}
+            className="list-none w-full text-center p-4 hover:bg-amber-500 hover:text-white transition-all cursor-pointer text-2xl"
+          >
             🛒
           </li>
           <li
@@ -131,11 +137,8 @@ export function Header() {
             Contato
           </li>
           {usuario && (
-            <li  className="list-none w-full text-center p-4 hover:bg-amber-500 hover:text-white transition-all cursor-pointer"
-            >
-              <button onClick={handleLogout}>
-                Sair
-              </button>
+            <li className="list-none w-full text-center p-4 hover:bg-amber-500 hover:text-white transition-all cursor-pointer">
+              <button onClick={handleLogout}>Sair</button>
             </li>
           )}
         </div>

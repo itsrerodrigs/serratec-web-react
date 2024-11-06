@@ -34,11 +34,8 @@ export const ImagemMembro = styled.img`
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform: scaleX(1);
 
   &:hover {
-    transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
