@@ -134,7 +134,7 @@ public class ItemPedido {
 //			System.out.println("produto salvo");
 //			return true;
 //		}else {
-//			System.out.println("produto nao exister ");
+//			System.out.println("produto nao existe ");
 //		return false ;
 //	}
 //	}

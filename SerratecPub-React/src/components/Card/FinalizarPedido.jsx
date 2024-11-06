@@ -1,22 +1,21 @@
-// import { useEffect, useState } from "react"
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import styles from "./Card.module.css"
+import { Botao } from "../Botao/Botao";
 
 export function FinalizarPedido({ carrinho, limparCarrinho }) {
     const [cliente, setCliente] = useState(null);
     const [loading, setLoading] = useState(true);
+    
 
     useEffect(() => {
         const usuario = localStorage.getItem('@Auth:user');
         if (usuario) {
             setCliente(JSON.parse(usuario))
-
         }
         setLoading(false);
     }, []);
 
-    // let nomeUser =obterUser().usuario.nome;
     const postPedido = async () => {
         const datoUsuario = localStorage.getItem('@Auth:user')
         const usuario = datoUsuario ? JSON.parse(datoUsuario) : null;
@@ -30,7 +29,10 @@ export function FinalizarPedido({ carrinho, limparCarrinho }) {
             })),
 
         };
-        alert(pedido1)
+        alert("PEDIDO CONCLUIDO"
+            +"\nCLIENTE: "+pedido1.nomeCliente+
+            "\nSTATUS-PEDIDO: "+pedido1.statusPedido)+
+            "\nOBRIGADO POR COMPRAR NA SERRATECPUB"
         try {
             const response = await api.post('/pedidos', pedido1, {
                 headers: { 'Content-Type': 'application/json' },
@@ -49,7 +51,6 @@ export function FinalizarPedido({ carrinho, limparCarrinho }) {
     return (
         <>
             <div className={styles.corpo}>
-                {cliente && (<p className={styles.p} >{cliente.nome}</p>)}
                 <button className={styles.bnt} onClick={postPedido}>Finalizar Pedido</button>
             </div>
         </>

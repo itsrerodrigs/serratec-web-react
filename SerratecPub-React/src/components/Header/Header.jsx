@@ -63,16 +63,6 @@ export function Header() {
           >
             Contato
           </li>
-          {usuario && (
-            <li>
-              <button
-                className="link p-3 transition-all cursor-pointer"
-                onClick={handleLogout}
-              >
-                Sair
-              </button>
-            </li>
-          )}
           <li
             onClick={handleCarNavigation}
             className="link p-3 transition-all cursor-pointer"
@@ -81,14 +71,21 @@ export function Header() {
           </li>
         </ul>
 
-        {usuario && <p>{usuario.nome}</p>}
-        <div className="relative hidden md:flex items-center justify-center gap-3 hover:bg-amber-500 hover:rounded-full h-8 w-8">
+        {usuario && <p className="pl-90">{usuario.nome}</p>}
+        <div className="relative hidden md:flex items-center justify-center hover:bg-amber-500 hover:rounded-full h-8 w-8">
           <i
             className="bx bxs-user cursor-pointer text-2xl"
             onClick={handleLoginNavigation}
           ></i>
         </div>
-
+        {usuario && (
+              <button
+                className="link transition-all cursor-pointer"
+                onClick={handleLogout}
+              >
+                Sair
+              </button>
+          )}
         <i
           className="bx bx-menu xl:hidden block text-5xl cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -2,7 +2,6 @@ export function validarEntradas(cliente) {
     if (!cliente){
         return 'Preencha todos os campos necessários.'   
     }
-    
 
     const entradas = ['cpf', 'dataNascimento', 'email', 'telefone', 'senha'];
     for (let valor of entradas) {
