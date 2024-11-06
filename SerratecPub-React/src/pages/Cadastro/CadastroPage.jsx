@@ -75,7 +75,7 @@ export function CadastroPage() {
     return (
         <>
             <form className={styles.cadastroWrapper} onSubmit={handleCadastrar}>
-                <h2>cadastro</h2>
+                <h2 className="h2">cadastro</h2>
                 <div className={styles.divInput}>
                     <InputText
                         className={styles.input}

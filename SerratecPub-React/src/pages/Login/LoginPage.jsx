@@ -60,16 +60,17 @@ export function LoginPage() {
                     <InputEmail
                         className={styles.input}
                         texto="Email: "
-                        placeholder="Digite seu email"
+                        placeholder="Digite seu email:"
                         value={email}
-                        onChange={setEmail}
+                        onChange={(e)=>setEmail(e.target.value)}
                     />
                     <div>
                         <InputSenha
                             className={styles.input}
                             texto="Senha: "
                             value={senha}
-                            onChange={setSenha}
+                            placeholder='Digite sua senha:'
+                            onChange={(e)=>setSenha(e.target.value)}
                         />
                     </div>
                     <button type="submit" className={styles.buttonEntrar}>Entrar</button>
