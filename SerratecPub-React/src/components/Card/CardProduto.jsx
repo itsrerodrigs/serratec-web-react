@@ -1,19 +1,24 @@
 
-import styles from "./Card.module.css"
+// import styles from "./Card.module.css"
 
-export function CardProduto({ nome, categoria, descricao, valorUnitario }) {
+import {Corpo, Corpo2, SubtituloCard, ParagrafoCard, ImagemCard} from "./cardPordutoStyle"
+export function CardProduto({ img, nome, categoria, descricao, valorUnitario }) {
    
     return (
         <>
-                <div className={styles.corpo}>
-                <div className={styles.corpo2}>
-                    <h2> {nome}</h2>
-                    <p> {categoria} <br /></p>
-                    <p> {descricao} <br /></p>
-                    <p>Valor Unitário: R${valorUnitario} <br /></p>
-                </div>
-            </div>
-
+                <Corpo>
+                <Corpo2>
+                    {img ? (
+                        <ImagemCard src={img} alt="Imagem do Produto"/>
+                    ) : (
+                        <ParagrafoCard>Imagem não disponível</ParagrafoCard>  
+                    )}
+                    <SubtituloCard> {nome}</SubtituloCard>
+                    <ParagrafoCard> {categoria} <br/></ParagrafoCard>
+                    <ParagrafoCard> {descricao} <br/></ParagrafoCard>
+                    <ParagrafoCard>Valor Unitário: R${valorUnitario} <br/></ParagrafoCard>
+                </Corpo2>
+            </Corpo>
         </>
     )
 

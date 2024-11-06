@@ -3,9 +3,7 @@ import { CardProduto } from "../../components/Card/CardProduto";
 import style from './Produto.module.css';
 import { api } from "../../services/api";
 import { InputNumb } from "../../components/Input/Input";
-import { CardCarrinho } from "../../components/Card/CardCarrinho";
 import { Botao } from "../../components/Botao/Botao";
-import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
 import { carrinhoContext } from "../../components/context/carrinhoContext";
 
 export function ProdutoPage() {
@@ -49,11 +47,6 @@ export function ProdutoPage() {
         addItem({ ...produto, quantidade });
         setQntd(qntd[produto.id] || 1);
     };
-
-
-    
-
-
     useEffect(() => {
         getProduto();
     }, []);
@@ -83,6 +76,7 @@ export function ProdutoPage() {
                                     <div className={style.box} key={pro.id}>
                                         <CardProduto
                                             key={pro.id}
+                                            img={pro.imagem}
                                             nome={pro.nome}
                                             descricao={pro.descricao}
                                             valorUnitario={pro.valorUnitario?.toFixed(2)}

@@ -1,18 +1,27 @@
+
+*{
+    font-family: Arvo, serif;
+}
 .corpo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 10px;
     align-items: center;
-    
 }
 
 .corpo2{
     display: flex;
     flex-direction: column;
     margin: 10px;
-    
 }
+
+.imagemProduto{
+    display: flex;
+    width: 10%;
+    height: 20%;
+}
+
 .corpocar{
     display: flex;
     flex-direction: column;
@@ -49,7 +58,7 @@
     margin:2px ;
     justify-content: center;
 }
-.p{
-    font-size: larger;
+.nCategoria .nDescricao .nValor{
+    font-size: 5px;
     margin: 20px;
 }

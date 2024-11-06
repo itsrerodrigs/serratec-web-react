@@ -1,5 +1,5 @@
 INSERT INTO produto (nome, categoria, descricao, qtd_estoque, data_cadastro, valor_unitario, imagem) VALUES
-('Cerveja Pilsen', 'CERVEJAS', 'Cerveja leve e refrescante', 100, '2024-11-01', 4.50, 'link_imagem1'),
+('Cerveja Pilsen', 'CERVEJAS', 'Cerveja leve e refrescante', 100, '2024-11-01', 4.50, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ33UiSPmDe8oPvb3hHzntJKlJNg2PaqYYIXQ&s'),
 ('Cerveja IPA', 'CERVEJAS', 'Cerveja com amargor intenso', 80, '2024-11-01', 5.00, 'link_imagem2'),
 ('Cerveja Stout', 'CERVEJAS', 'Cerveja escura com notas de café', 50, '2024-11-01', 6.00, 'link_imagem3'),
 ('Vodka', 'DESTILADOS', 'Vodka premium russa', 60, '2024-11-01', 20.00, 'link_imagem4'),
@@ -16,6 +16,4 @@ INSERT INTO produto (nome, categoria, descricao, qtd_estoque, data_cadastro, val
 ('Gelo em Cubos', 'AGUAS_E_GELO', 'Gelo em cubos para drinks', 100, '2024-11-01', 0.50, 'link_imagem15'),
 ('Drink Pronto Margarita', 'DRINKS_PRONTOS', 'Margarita pronta para beber', 80, '2024-11-01', 10.00, 'link_imagem16'),
 ('Drink Pronto Mojito', 'DRINKS_PRONTOS', 'Mojito pronto para beber', 90, '2024-11-01', 12.00, 'link_imagem17'),
-('Drink Pronto Caipirinha', 'DRINKS_PRONTOS', 'Caipirinha pronta para beber', 85, '2024-11-01', 8.00, 'link_imagem18'),
-('Gin', 'DESTILADOS', 'Gin importado', 65, '2024-11-01', 28.00, 'link_imagem19'),
-('Cerveja Ale', 'CERVEJAS', 'Cerveja de alta fermentação', 75, '2024-11-01', 5.50, 'link_imagem20');
+('Drink Pronto Caipirinha', 'DRINKS_PRONTOS', 'Caipirinha pronta para beber', 85, '2024-11-01', 8.00, 'link_imagem18')
