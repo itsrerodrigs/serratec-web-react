@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 *{
     font-family: Arvo, serif;
@@ -10,11 +11,14 @@
     align-items: center;
 }
 
+=======
+>>>>>>> 0d575cd54573b8ffdc860299519d49a9101e9de5
 .corpo2{
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
+<<<<<<< HEAD
 
 .imagemProduto{
     display: flex;
@@ -62,3 +66,5 @@
     font-size: 5px;
     margin: 20px;
 }
+=======
+>>>>>>> 0d575cd54573b8ffdc860299519d49a9101e9de5

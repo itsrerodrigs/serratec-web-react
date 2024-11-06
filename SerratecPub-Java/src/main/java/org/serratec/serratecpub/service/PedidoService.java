@@ -29,11 +29,11 @@ public class PedidoService {
 	@Autowired
 	private ClienteRepository clienteRepository;
 
-//    @Autowired
-//    private EnderecoUtil enderecoUtil;
-//    
-//    @Autowired
-//    private EmailService email;
+    @Autowired
+    private EnderecoUtil enderecoUtil;
+    
+    @Autowired
+    private EmailService email;
 
 	public List<PedidoDto> obterTodosPedidos() {
 		return pedidoRepository.findAll().stream().map(PedidoDto::toDto).toList();
@@ -68,14 +68,14 @@ public class PedidoService {
 
 	public PedidoDto salvarPedido(PedidoDto pedidoDto) {
 		Pedido pedidoEntity = pedidoDto.toEntity();
-		// enderecoUtil.processarEndereco(pedidoDto.cliente(),
-		// pedidoEntity.getCliente());
+//		 enderecoUtil.processarEndereco(pedidoDto.cliente(),
+//		 pedidoEntity.getCliente());
 		verificarCliente(pedidoEntity.getNomeCliente(),pedidoEntity);
 		pedidoEntity.getItemPedido().forEach(itemPedido -> verificarProduto(itemPedido.getIdProduto(), itemPedido));
 		pedidoEntity.setValorTotal(pedidoDto.valorTd(pedidoEntity));
 		pedidoEntity = pedidoRepository.save(pedidoEntity);
-		// email.enviarEmail(pedidoEntity.getCliente().getEmail(), "Pedido realizado com
-		// sucesso", pedidoEntity.toString());
+		 email.enviarEmail(pedidoEntity.getCliente().getEmail(), "Pedido realizado com sucesso",
+			 pedidoEntity.toString());
 		return PedidoDto.toDto(pedidoEntity);
 	}
 
