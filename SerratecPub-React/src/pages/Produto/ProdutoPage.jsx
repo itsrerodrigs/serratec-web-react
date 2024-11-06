@@ -9,32 +9,7 @@ import { FinalizarPedido } from "../../components/Card/FinalizarPedido";
 
 
 export function ProdutoPage() {
-    const [produtoList, setProdutoList] = useState([
-        {
-            id: 30,
-            nome: 'cerveja',
-            categoria: 'Bebida',
-            descricao: 'produto.descricao',
-            qntd: 2,
-            valorBruto: 3.5
-        },
-        {
-            id: 40,
-            nome: 'cerveja',
-            categoria: 'Bebida',
-            descricao: 'descricao',
-            qntd: 2,
-            valorBruto: 3.5
-        },
-        {
-            id: 60,
-            nome: 'cerveja',
-            categoria: 'Bebida',
-            descricao: 'descricao',
-            qntd: 2,
-            valorBruto: 3.5
-        },
-    ]);
+    const [produtoList, setProdutoList] = useState([]);
     const [carrinho, setCarrinho] = useState([]);
     const [qntd, setQntd] = useState(0);
     const [contator, setContator] = useState(0);

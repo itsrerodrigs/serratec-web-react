@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 import { api } from "../../services/api";
 
 
@@ -41,10 +41,7 @@ export function FinalizarPedido({ carrinho, limparCarrinho }) {
     }
     return (
         <>
-            {usuario.nome}
             <button onClick={postPedido}>Finalizar Pedido</button>
-
-
         </>
     )
 
