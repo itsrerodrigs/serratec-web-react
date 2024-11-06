@@ -1,6 +1,3 @@
-
-// import styles from "./Card.module.css"
-
 import {Corpo, Corpo2, SubtituloCard, ParagrafoCard, ImagemCard} from "./cardPordutoStyle"
 export function CardProduto({ img, nome, categoria, descricao, valorUnitario }) {
    
@@ -21,5 +18,4 @@ export function CardProduto({ img, nome, categoria, descricao, valorUnitario }) 
             </Corpo>
         </>
     )
-
 }

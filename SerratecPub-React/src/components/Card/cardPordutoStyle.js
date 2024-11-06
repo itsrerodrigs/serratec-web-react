@@ -17,6 +17,8 @@ export const Corpo2 = styled.div`
 `
 export const SubtituloCard = styled.h2`
   font-size: larger;
+  text-transform:uppercase;
+  font-weight: bold;
   margin: 10px;
 
 `

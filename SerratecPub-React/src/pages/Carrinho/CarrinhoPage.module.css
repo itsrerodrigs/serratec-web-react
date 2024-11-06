@@ -17,16 +17,23 @@ footer{
 }
 
 .box{
+    margin-top: 10px;
     gap: 5rem;
     font-size: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     justify-items: center;
     width: 70vh;
     height: auto;
     padding: 10px;
     line-height: 2;
 }
+.box .nome{
+    font-size: 2vh;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .carrinhoVazio{
     font-size: 1.5rem;
     margin-top: 20px;

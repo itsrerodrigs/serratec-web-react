@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
-import styles from "./Card.module.css"
+import styles from "./FinalizarPedido.module.css"
 import { Botao } from "../Botao/Botao";
 
 export function FinalizarPedido({ carrinho, limparCarrinho }) {
@@ -51,8 +51,11 @@ export function FinalizarPedido({ carrinho, limparCarrinho }) {
     return (
         <>
             <div className={styles.corpo}>
+               <button className={styles.bntLimpar} onClick={limparCarrinho}>Limpar Carrinho</button>
+            <div >
                 <button className={styles.bnt} onClick={postPedido}>Finalizar Pedido</button>
             </div>
+        </div>
         </>
     )
 

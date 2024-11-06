@@ -15,7 +15,7 @@ export function CarrinhoPage() {
             {carrinhoItem.map((car) => (
                 <div key={car.id} className={styles.corpocar}>
                     <div className={styles.box}>
-                        <h2>{car.nome}</h2>
+                        <h2 className={styles.nome}>{car.nome}</h2>
                         <p>{car.descricao} <br /></p>
                         <p>{car.quantidade} <br /></p>
                         <p>R${(car.valorUnitario * car.quantidade).toFixed(2)} <br /></p>
@@ -37,7 +37,7 @@ export function CarrinhoPage() {
                 </div>
             )}
             {carrinhoItem.length > 0 &&(
-            <div className={styles.finalizar}>
+            <div>
                 <FinalizarPedido
                     carrinho={carrinhoItem}
                     limparCarrinho={() => limparCarrinho()}

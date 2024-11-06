@@ -64,6 +64,7 @@ export function ProdutoPage() {
 
     return (
         <>
+        <div className={style.container}>
             <h1 className={style.h1}>PRODUTOS</h1>
             
             <div className={style.corpo}>
@@ -100,7 +101,7 @@ export function ProdutoPage() {
                         </div>
                     ))}
                 </div>
-
+                </div>
             </div>
         </>
     );
