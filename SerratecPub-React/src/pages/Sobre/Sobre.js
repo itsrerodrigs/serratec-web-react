@@ -6,7 +6,7 @@ export const FotoMembro = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 8.6vh;
   padding: 60px;
-  margin-left: 20%;
+  margin-left: 10%;
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
@@ -43,7 +43,7 @@ export const ImagemMembro = styled.img`
   }
 
   @media (max-width: 768px) {
-    width: 170px;
+    width: 120px;
     height: 120px;
   }
 `;

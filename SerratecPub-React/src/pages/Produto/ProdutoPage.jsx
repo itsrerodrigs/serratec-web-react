@@ -71,13 +71,13 @@ export function ProdutoPage() {
 
     return (
         <>
-            <h1>PRODUTOS</h1>
+            <h1 className={style.h1}>PRODUTOS</h1>
             
             <div className={style.corpo}>
                 <div className={style.boxproduto}>
                     {categories.map(categoria => (
                         <div key={categoria}>
-                            <h2>{categoria}</h2>
+                            <h2 className={style.h2}>{categoria}</h2>
                             <div className={style.boxbebida}>
                                 {produtoList.filter(produto => produto.categoria === categoria).map((pro) => (
                                     <div className={style.box} key={pro.id}>

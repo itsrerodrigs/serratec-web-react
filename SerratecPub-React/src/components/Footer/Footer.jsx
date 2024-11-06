@@ -17,26 +17,14 @@ export function Footer() {
       <p>Todos os direitos reservados © Serratec Pub 2024</p>
       <nav>
         <ul className={style.containerNav}>
-          <li>
-            <button onClick={handleHomeNavigation} className={style.link}>
-              Home
-            </button>
-          </li>
+        
           <li>
             <button onClick={handleSobreNavigation} className={style.link}>
               Sobre
             </button>
           </li>
-          <li>
-            <button onClick={handleProdutoNavigation} className={style.link}>
-              Produtos
-            </button>
-          </li>
-          <li>
-            <button onClick={handleClienteNavigation} className={style.link}>
-              Cliente
-            </button>
-          </li>
+          
+       
           <li>
             <button onClick={handleContatoNavigation} className={style.link}>
               Contato

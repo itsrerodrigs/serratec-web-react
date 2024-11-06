@@ -1,16 +1,21 @@
 // import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { api } from "../../services/api";
-
+import styles from "./Card.module.css"
 
 export function FinalizarPedido({ carrinho, limparCarrinho }) {
-    // useEffect(() => {
-    //     console.log(nomeCliente.nome)
-    // }, [])
-    
-    const datoUsuario = localStorage.getItem('@Auth:user')
-    const usuario = datoUsuario ? JSON.parse(datoUsuario) : null;
-    
-    
+    const [cliente, setCliente] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const usuario = localStorage.getItem('@Auth:user');
+        if (usuario) {
+            setCliente(JSON.parse(usuario))
+
+        }
+        setLoading(false);
+    }, []);
+
     // let nomeUser =obterUser().usuario.nome;
     const postPedido = async () => {
         const datoUsuario = localStorage.getItem('@Auth:user')
@@ -38,10 +43,15 @@ export function FinalizarPedido({ carrinho, limparCarrinho }) {
 
         }
 
+    }; if (loading) {
+        return <div>Carregando....</div>
     }
     return (
         <>
-            <button onClick={postPedido}>Finalizar Pedido</button>
+            <div className={styles.corpo}>
+                {cliente && (<p className={styles.p} >{cliente.nome}</p>)}
+                <button className={styles.bnt} onClick={postPedido}>Finalizar Pedido</button>
+            </div>
         </>
     )
 

@@ -21,8 +21,8 @@
     align-items: center;
 }
 .box{
+    font-size: 20px;
     border-radius: 10px;
-    background-color: rgba(22, 24, 23, 0.397);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     justify-items: center;
     width: 70vh;
@@ -33,5 +33,23 @@
 }
 .bnt{
     display: flex;
+    background-color: #dfa32e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
     gap: 15px;
+    align-items: center;
+    height: 50px;
+    margin: 15px;
+}
+.finalizar{
+    font-size: larger;
+    display: flex;
+    margin:2px ;
+    justify-content: center;
+}
+.p{
+    font-size: larger;
+    margin: 20px;
 }

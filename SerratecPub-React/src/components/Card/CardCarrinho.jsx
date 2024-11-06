@@ -8,7 +8,7 @@ export function CardCarrinho() {
 
     return (
         <>
-            <p>{valototal}</p>
+
             {carrinhoItem.map((car) => (
                 <div className={styles.corpocar}>
                     <div className={styles.box}>
@@ -16,20 +16,20 @@ export function CardCarrinho() {
                         <p>{car.descricao} <br /></p>
                         <p>{car.quantidade} <br /></p>
                         <p>R${(car.valorUnitario * car.quantidade).toFixed(2)} <br /></p>
-                    </div>
-                    <div className={styles.bnt}>
-                        <button onClick={() => removerUm(car.id)}>➖</button>
-                        <button onClick={() => removerItem(car.id)}>✖</button>
-                        <button onClick={() => addItem(car)}>➕</button>
+                        <div className={styles.bnt}>
+                            <button onClick={() => removerUm(car.id)}>➖</button>
+                            <button onClick={() => removerItem(car.id)}>✖</button>
+                            <button onClick={() => addItem(car)}>➕</button>
+                        </div>
                     </div>
 
                 </div>
             ))}
-            <div className={styles.corpocar}>
+            <div className={styles.finalizar}>
 
-            <FinalizarPedido
-                carrinho={carrinhoItem}
-                limparCarrinho={() => limparCarrinho()}
+                <FinalizarPedido
+                    carrinho={carrinhoItem}
+                    limparCarrinho={() => limparCarrinho()}
                 />
             </div>
         </>
