@@ -76,90 +76,92 @@ export function CadastroPage() {
     };
     return (
         <>
-            <form className={styles.cadastroWrapper} onSubmit={handleCadastrar}>
-                <h2 className="h2">cadastro</h2>
-                <div className={styles.divInput}>
-                    <InputText
-                        className={styles.input}
-                        texto="Nome:"
-                        placeholder="Digite seu nome"
-                        value={nome}
-                        onChange={(e)=>setNome(e.target.value)}
-                    />
-                    <InputNumb
-                        className={styles.input}
-                        texto="CPF: "
-                        placeholder="Digite seu CPF"
-                        mask="cpf"
-                        value={cpf}
-                        onChange={(e)=>handleMask(e, 'cpf', setCpf)}
-                    />
-                    <InputDate
-                        className={styles.input}
-                        texto="Data Nascimento: "
-                        value={dataNascimento}
-                        onChange={(e)=>setDataNascimento(e.target.value)}
-                    />
-                    <InputText
-                        className={styles.input}
-                        texto="CEP: "
-                        placeholder="Digite seu CEP"
-                        mask=""
-                        value={cep}
-                        onChange={(e)=>handleMask(e, 'cep', setCep)}
-                    />
-                    <InputNumb
-                        className={styles.input}
-                        texto="Número da residência: "
-                        placeholder="Digite o número"
-                        mask="numero"
-                        value={numero}
-                        onChange={(e)=>handleMask(e, 'numero', setNumero)}
-                    />
-                    <InputText
-                        className={styles.input}
-                        texto="Complemento: "
-                        placeholder="Digite o complemento"
-                        value={complemento}
-                        onChange={(e)=>setComplemento(e.target.value)}
-                    />
-                    <InputText
-                        className={styles.input}
-                        texto="Email: "
-                        placeholder="Digite seu email"
-                        value={email}
-                        onChange={(e)=>setEmail(e.target.value)}
-                    />
-                    <InputNumb
-                        className={styles.input}
-                        texto="Telefone: "
-                        placeholder="(00)9 9999-9999"
-                        mask="telefone"
-                        value={telefone}
-                        onChange={(e)=>handleMask(e, 'telefone', setTelefone)}
-                    />
-                    <InputSenha
-                        className={styles.input}
-                        texto="Senha: "
-                        placeholder={"Digite sua senha"}
-                        value={senha}
-                        onChange={(e)=>setSenha(e.target.value)}
-                    />
-                    <InputSenha
-                        className={styles.input}
-                        texto="Confirme sua senha: "
-                        placeholder="Digite sua senha"
-                        value={senhaConfirm}
-                        onChange={(e)=>setSenhaConfirm(e.target.value)}
-                    />
-                    <div className={styles.divTermos}>
-                        <input type="checkbox"/>
-                        <p>Li e aceito os</p>
-                        <button onClick={handleNavigation} className={styles.buttonTermos}>termos de uso</button>
+        <div className={styles.cadastroPage}>
+                <form className={styles.cadastroWrapper} onSubmit={handleCadastrar}>
+                    <h2 className="h2">cadastro</h2>
+                    <div className={styles.divInput}>
+                        <InputText
+                            className={styles.input}
+                            texto="Nome:"
+                            placeholder="Digite seu nome"
+                            value={nome}
+                            onChange={(e)=>setNome(e.target.value)}
+                        />
+                        <InputNumb
+                            className={styles.input}
+                            texto="CPF: "
+                            placeholder="Digite seu CPF"
+                            mask="cpf"
+                            value={cpf}
+                            onChange={(e)=>handleMask(e, 'cpf', setCpf)}
+                        />
+                        <InputDate
+                            className={styles.input}
+                            texto="Data Nascimento: "
+                            value={dataNascimento}
+                            onChange={(e)=>setDataNascimento(e.target.value)}
+                        />
+                        <InputText
+                            className={styles.input}
+                            texto="CEP: "
+                            placeholder="Digite seu CEP"
+                            mask=""
+                            value={cep}
+                            onChange={(e)=>handleMask(e, 'cep', setCep)}
+                        />
+                        <InputNumb
+                            className={styles.input}
+                            texto="Número da residência: "
+                            placeholder="Digite o número"
+                            mask="numero"
+                            value={numero}
+                            onChange={(e)=>handleMask(e, 'numero', setNumero)}
+                        />
+                        <InputText
+                            className={styles.input}
+                            texto="Complemento: "
+                            placeholder="Digite o complemento"
+                            value={complemento}
+                            onChange={(e)=>setComplemento(e.target.value)}
+                        />
+                        <InputText
+                            className={styles.input}
+                            texto="Email: "
+                            placeholder="Digite seu email"
+                            value={email}
+                            onChange={(e)=>setEmail(e.target.value)}
+                        />
+                        <InputNumb
+                            className={styles.input}
+                            texto="Telefone: "
+                            placeholder="(00)9 9999-9999"
+                            mask="telefone"
+                            value={telefone}
+                            onChange={(e)=>handleMask(e, 'telefone', setTelefone)}
+                        />
+                        <InputSenha
+                            className={styles.input}
+                            texto="Senha: "
+                            placeholder={"Digite sua senha"}
+                            value={senha}
+                            onChange={(e)=>setSenha(e.target.value)}
+                        />
+                        <InputSenha
+                            className={styles.input}
+                            texto="Confirme sua senha: "
+                            placeholder="Digite sua senha"
+                            value={senhaConfirm}
+                            onChange={(e)=>setSenhaConfirm(e.target.value)}
+                        />
+                        <div className={styles.divTermos}>
+                            <input type="checkbox"/>
+                            <p>Li e aceito os</p>
+                            <button onClick={handleNavigation} className={styles.buttonTermos}>termos de uso</button>
+                        </div>
+                        <button type="submit" className={styles.buttonCadastrar} >cadastrar-se</button>
                     </div>
-                    <button type="submit" className={styles.buttonCadastrar} >cadastrar-se</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </>
     );
 }

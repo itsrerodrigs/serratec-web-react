@@ -57,7 +57,7 @@ public class SecurityConfig {
 	@Bean
     public UrlBasedCorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("http://127.0.0.1:5173"); // Permite requisições dessa origem
+        configuration.addAllowedOrigin("http://localhost:5173"); // Permite requisições dessa origem
         configuration.addAllowedMethod("GET");
         configuration.addAllowedMethod("POST");
         configuration.addAllowedMethod("PUT");
